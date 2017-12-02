@@ -339,7 +339,8 @@ h3.profile-title {
 
 .social-icons {
   display: block;
-  padding: 30px 40px;
+  /*padding: 30px 40px;*/
+  padding: 0px 0px 10px 40px;
 }
 .social-icons li {
   display: inline-block;
