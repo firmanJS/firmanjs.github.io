@@ -12,6 +12,10 @@
   color: #fff;
 }
 
+.frame-peta {
+  margin-left: -100px;
+}
+
 ::selection {
   background-color: #c931ff;
   color: #fff;
@@ -58,7 +62,8 @@ body {
   position: relative;
 }
 
-ol, ul {
+ol,
+ul {
   margin: 0;
   padding: 0;
   list-style: none;
@@ -83,7 +88,9 @@ iframe {
   border: 0;
 }
 
-a, a:focus, a:hover {
+a,
+a:focus,
+a:hover {
   text-decoration: none;
   outline: 0;
 }
@@ -107,7 +114,11 @@ a, a:focus, a:hover {
  *  Typography
  *
  **/
-.btn i, .btn-large i, .btn-floating i, .btn-large i, .btn-flat i {
+.btn i,
+.btn-large i,
+.btn-floating i,
+.btn-large i,
+.btn-flat i {
   font-size: 1em;
   line-height: inherit;
 }
@@ -116,8 +127,12 @@ a, a:focus, a:hover {
   background: #f9f9ff;
 }
 
-h1, h2, h3,
-h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: "Poppins", sans-serif;
   color: #222222;
   line-height: 1.2em !important;
@@ -126,8 +141,12 @@ h4, h5, h6 {
   font-weight: 600;
 }
 
-.h1, .h2, .h3,
-.h4, .h5, .h6 {
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
   margin-bottom: 0;
   margin-top: 0;
   font-family: "Poppins", sans-serif;
@@ -135,32 +154,39 @@ h4, h5, h6 {
   color: #222222;
 }
 
-h1, .h1 {
+h1,
+.h1 {
   font-size: 36px;
 }
 
-h2, .h2 {
+h2,
+.h2 {
   font-size: 30px;
 }
 
-h3, .h3 {
+h3,
+.h3 {
   font-size: 24px;
 }
 
-h4, .h4 {
+h4,
+.h4 {
   font-size: 18px;
 }
 
-h5, .h5 {
+h5,
+.h5 {
   font-size: 16px;
 }
 
-h6, .h6 {
+h6,
+.h6 {
   font-size: 14px;
   color: #222222;
 }
 
-td, th {
+td,
+th {
   border-radius: 0px;
 }
 
@@ -173,7 +199,8 @@ td, th {
  * 2. The use of `table` rather than `block` is only necessary if using
  *    `:before` to contain the top-margins of child elements.
  */
-.clear::before, .clear::after {
+.clear::before,
+.clear::after {
   content: " ";
   display: table;
 }
@@ -773,7 +800,12 @@ td, th {
   font-size: 24px;
 }
 
-b, i, sup, sub, u, del {
+b,
+i,
+sup,
+sub,
+u,
+del {
   color: #c931ff;
 }
 
@@ -801,11 +833,21 @@ h6 {
   font-size: 14px;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   line-height: 1.5em;
 }
 
-.typography h1, .typography h2, .typography h3, .typography h4, .typography h5, .typography h6 {
+.typography h1,
+.typography h2,
+.typography h3,
+.typography h4,
+.typography h5,
+.typography h6 {
   color: #777777;
 }
 
@@ -1098,7 +1140,10 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
 }
 
-.progress-table .table-head .serial, .progress-table .table-head .country, .progress-table .table-head .visit, .progress-table .table-head .percentage {
+.progress-table .table-head .serial,
+.progress-table .table-head .country,
+.progress-table .table-head .visit,
+.progress-table .table-head .percentage {
   color: #222222;
   line-height: 40px;
   text-transform: uppercase;
@@ -1111,7 +1156,10 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
 }
 
-.progress-table .table-row .serial, .progress-table .table-row .country, .progress-table .table-row .visit, .progress-table .table-row .percentage {
+.progress-table .table-row .serial,
+.progress-table .table-row .country,
+.progress-table .table-row .visit,
+.progress-table .table-row .percentage {
   display: flex;
   align-items: center;
 }
@@ -1352,7 +1400,7 @@ h1, h2, h3, h4, h5, h6 {
   cursor: pointer;
 }
 
-.default-switch input + label {
+.default-switch input+label {
   position: absolute;
   top: 1px;
   left: 1px;
@@ -1368,7 +1416,7 @@ h1, h2, h3, h4, h5, h6 {
   cursor: pointer;
 }
 
-.default-switch input:checked + label {
+.default-switch input:checked+label {
   left: 19px;
 }
 
@@ -1392,7 +1440,7 @@ h1, h2, h3, h4, h5, h6 {
   opacity: 0;
 }
 
-.primary-switch input + label {
+.primary-switch input+label {
   position: absolute;
   left: 0;
   top: 0;
@@ -1402,7 +1450,7 @@ h1, h2, h3, h4, h5, h6 {
   height: 100%;
 }
 
-.primary-switch input + label:before {
+.primary-switch input+label:before {
   content: "";
   position: absolute;
   left: 0;
@@ -1420,7 +1468,7 @@ h1, h2, h3, h4, h5, h6 {
   transition: all 0.2s;
 }
 
-.primary-switch input + label:after {
+.primary-switch input+label:after {
   content: "";
   position: absolute;
   top: 1px;
@@ -1437,11 +1485,11 @@ h1, h2, h3, h4, h5, h6 {
   cursor: pointer;
 }
 
-.primary-switch input:checked + label:after {
+.primary-switch input:checked+label:after {
   left: 19px;
 }
 
-.primary-switch input:checked + label:before {
+.primary-switch input:checked+label:before {
   background: #c931ff;
 }
 
@@ -1465,7 +1513,7 @@ h1, h2, h3, h4, h5, h6 {
   opacity: 0;
 }
 
-.confirm-switch input + label {
+.confirm-switch input+label {
   position: absolute;
   left: 0;
   top: 0;
@@ -1475,7 +1523,7 @@ h1, h2, h3, h4, h5, h6 {
   height: 100%;
 }
 
-.confirm-switch input + label:before {
+.confirm-switch input+label:before {
   content: "";
   position: absolute;
   left: 0;
@@ -1493,7 +1541,7 @@ h1, h2, h3, h4, h5, h6 {
   cursor: pointer;
 }
 
-.confirm-switch input + label:after {
+.confirm-switch input+label:after {
   content: "";
   position: absolute;
   top: 1px;
@@ -1510,11 +1558,11 @@ h1, h2, h3, h4, h5, h6 {
   cursor: pointer;
 }
 
-.confirm-switch input:checked + label:after {
+.confirm-switch input:checked+label:after {
   left: 19px;
 }
 
-.confirm-switch input:checked + label:before {
+.confirm-switch input:checked+label:before {
   background: #4cd3e3;
 }
 
@@ -1538,7 +1586,7 @@ h1, h2, h3, h4, h5, h6 {
   opacity: 0;
 }
 
-.primary-checkbox input + label {
+.primary-checkbox input+label {
   position: absolute;
   left: 0;
   top: 0;
@@ -1551,7 +1599,7 @@ h1, h2, h3, h4, h5, h6 {
   border: 1px solid #f1f1f1;
 }
 
-.primary-checkbox input:checked + label {
+.primary-checkbox input:checked+label {
   background: url(../img/elements/primary-check.png) no-repeat center center/cover;
   border: none;
 }
@@ -1576,7 +1624,7 @@ h1, h2, h3, h4, h5, h6 {
   opacity: 0;
 }
 
-.confirm-checkbox input + label {
+.confirm-checkbox input+label {
   position: absolute;
   left: 0;
   top: 0;
@@ -1589,7 +1637,7 @@ h1, h2, h3, h4, h5, h6 {
   border: 1px solid #f1f1f1;
 }
 
-.confirm-checkbox input:checked + label {
+.confirm-checkbox input:checked+label {
   background: url(../img/elements/success-check.png) no-repeat center center/cover;
   border: none;
 }
@@ -1614,7 +1662,7 @@ h1, h2, h3, h4, h5, h6 {
   opacity: 0;
 }
 
-.disabled-checkbox input + label {
+.disabled-checkbox input+label {
   position: absolute;
   left: 0;
   top: 0;
@@ -1632,7 +1680,7 @@ h1, h2, h3, h4, h5, h6 {
   z-index: 3;
 }
 
-.disabled-checkbox input:checked + label {
+.disabled-checkbox input:checked+label {
   background: url(../img/elements/disabled-check.png) no-repeat center center/cover;
   border: none;
 }
@@ -1657,7 +1705,7 @@ h1, h2, h3, h4, h5, h6 {
   opacity: 0;
 }
 
-.primary-radio input + label {
+.primary-radio input+label {
   position: absolute;
   left: 0;
   top: 0;
@@ -1670,7 +1718,7 @@ h1, h2, h3, h4, h5, h6 {
   border: 1px solid #f1f1f1;
 }
 
-.primary-radio input:checked + label {
+.primary-radio input:checked+label {
   background: url(../img/elements/primary-radio.png) no-repeat center center/cover;
   border: none;
 }
@@ -1695,7 +1743,7 @@ h1, h2, h3, h4, h5, h6 {
   opacity: 0;
 }
 
-.confirm-radio input + label {
+.confirm-radio input+label {
   position: absolute;
   left: 0;
   top: 0;
@@ -1708,7 +1756,7 @@ h1, h2, h3, h4, h5, h6 {
   border: 1px solid #f1f1f1;
 }
 
-.confirm-radio input:checked + label {
+.confirm-radio input:checked+label {
   background: url(../img/elements/success-radio.png) no-repeat center center/cover;
   border: none;
 }
@@ -1733,7 +1781,7 @@ h1, h2, h3, h4, h5, h6 {
   opacity: 0;
 }
 
-.disabled-radio input + label {
+.disabled-radio input+label {
   position: absolute;
   left: 0;
   top: 0;
@@ -1751,7 +1799,7 @@ h1, h2, h3, h4, h5, h6 {
   z-index: 3;
 }
 
-.disabled-radio input:checked + label {
+.disabled-radio input:checked+label {
   background: url(../img/elements/disabled-radio.png) no-repeat center center/cover;
   border: none;
 }
@@ -1887,13 +1935,18 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-.p1-gradient-bg, .primary-btn, .primary-btn:after, .primary-btn2.primary-border:hover, .generic-banner {
+.p1-gradient-bg,
+.primary-btn,
+.primary-btn:after,
+.primary-btn2.primary-border:hover,
+.generic-banner {
   background-image: -moz-linear-gradient(0deg, #ca2fff 0%, #8e96f8 55%, #53fff0 100%);
   background-image: -webkit-linear-gradient(0deg, #ca2fff 0%, #8e96f8 55%, #53fff0 100%);
   background-image: -ms-linear-gradient(0deg, #ca2fff 0%, #8e96f8 55%, #53fff0 100%);
 }
 
-.p1-gradient-color, .clockinner span {
+.p1-gradient-color,
+.clockinner span {
   background: -moz-linear-gradient(0deg, #ca2fff 0%, #8e96f8 55%, #53fff0 100%);
   background: -webkit-linear-gradient(0deg, #ca2fff 0%, #8e96f8 55%, #53fff0 100%);
   background: -ms-linear-gradient(0deg, #ca2fff 0%, #8e96f8 55%, #53fff0 100%);
@@ -2091,6 +2144,7 @@ header {
     -o-transition: all 200ms ease-in;
     transition: all 200ms ease-in;
   }
+
   .dropdown:hover .dropdown-menu {
     display: block;
     opacity: 1;
@@ -2109,7 +2163,8 @@ header {
   }
 }
 
-.dropdown-item:focus, .dropdown-item:hover {
+.dropdown-item:focus,
+.dropdown-item:hover {
   color: #16181b;
   text-decoration: none;
   background-color: transparent;
@@ -2273,7 +2328,8 @@ header {
   margin-bottom: 10px;
 }
 
-.About-area .carousel-trigger .next-trigger, .About-area .carousel-trigger .prev-trigger {
+.About-area .carousel-trigger .next-trigger,
+.About-area .carousel-trigger .prev-trigger {
   width: 40px;
   background: #fff;
   border: 1px solid #eee;
@@ -2285,7 +2341,8 @@ header {
   cursor: pointer;
 }
 
-.About-area .carousel-trigger .next-trigger span, .About-area .carousel-trigger .prev-trigger span {
+.About-area .carousel-trigger .next-trigger span,
+.About-area .carousel-trigger .prev-trigger span {
   line-height: 40px;
   -webkit-transition: all 0.3s ease 0s;
   -moz-transition: all 0.3s ease 0s;
@@ -2294,12 +2351,14 @@ header {
   font-weight: 600;
 }
 
-.About-area .carousel-trigger .next-trigger:hover, .About-area .carousel-trigger .prev-trigger:hover {
+.About-area .carousel-trigger .next-trigger:hover,
+.About-area .carousel-trigger .prev-trigger:hover {
   background: #c931ff;
   border: 1px solid #c931ff;
 }
 
-.About-area .carousel-trigger .next-trigger:hover span, .About-area .carousel-trigger .prev-trigger:hover span {
+.About-area .carousel-trigger .next-trigger:hover span,
+.About-area .carousel-trigger .prev-trigger:hover span {
   color: #fff;
 }
 
@@ -2360,7 +2419,9 @@ header {
 }
 
 @media (max-width: 800px) {
-  .info-area .info-content, .info-area .info-content2 {
+
+  .info-area .info-content,
+  .info-area .info-content2 {
     text-align: center;
     padding: 52px 30px 30px 0;
   }
@@ -2511,7 +2572,8 @@ header {
   padding: 12px;
 }
 
-.reservation-area input, .reservation-area textarea {
+.reservation-area input,
+.reservation-area textarea {
   font-size: 14px;
   font-weight: 200;
 }
@@ -2591,7 +2653,8 @@ header {
   text-align: center;
 }
 
-.footer-area .footer-bottom i, .footer-area .footer-bottom a {
+.footer-area .footer-bottom i,
+.footer-area .footer-bottom a {
   color: #c931ff;
 }
 
@@ -2666,4 +2729,18 @@ header {
 
 .switch-wrap p {
   margin: 0;
+}
+
+@media screen and (max-width: 700px) {
+  .frame-peta {
+    margin-left: -14px;
+    width: 540px;
+  }
+}
+
+@media (max-width:320px) {
+  .frame-peta {
+    margin-left: -14px;
+    width: 540px;
+  }
 }
