@@ -2737,6 +2737,9 @@ header {
     width: 320px;
     height: 300px;
   }
+   .mt-top-cstm{
+    margin-top: -35px !important;
+  }
 }
 
 @media (max-width:320px) {
@@ -2744,5 +2747,8 @@ header {
     margin-left: -14px;
     width: 320px;
     height: 320px;
+  }
+  .mt-top-cstm {
+    margin-top: -35px !important;
   }
 }
