@@ -376,12 +376,11 @@ h3.profile-title {
     -webkit-border-radius: 50px;
     border-radius: 100%;
     overflow: hidden;
-    margin-left: 50px;
+    margin-left: 26px;
   }
   .responsive-header .profile-content {
     margin-top: 10px;
     overflow: hidden;
-    margin-left: 15px;
   }
 }
 
