@@ -1,9 +1,11 @@
 {
     "short_name": "Firmanjs",
-    "name": "Firmanjs",
+    "name": "Firman Abdul Hakim",
+    "description": "Portfolio of Firman Abdul Hakim — Senior Backend Software Engineer",
     "theme_color": "#4A90E2",
     "background_color": "#F7F8F9",
     "display": "standalone",
+    "scope": "/",
     "icons": [
       {
         "src": "assets/img/logo.png",
@@ -24,7 +26,12 @@
         "src": "assets/img/logo.png",
         "type": "image/png",
         "sizes": "192x192"
+      },
+      {
+        "src": "assets/img/logo.png",
+        "type": "image/png",
+        "sizes": "512x512"
       }
     ],
-    "start_url": "/index.html"
+    "start_url": "/"
   }

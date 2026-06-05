@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://firmanjs.github.io/sitemap.xml
+# If you want to block specific folders, add Disallow rules here.
+# Example: Disallow: /private/
