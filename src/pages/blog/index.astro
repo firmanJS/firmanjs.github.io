@@ -8,9 +8,53 @@ const description = "Baca artikel terbaru tentang tips pembuatan website, optima
 const canonical = "https://firmanjs.github.io/blog/";
 
 const mediumPosts = await fetchMediumPosts();
+
+const localPosts = [
+  {
+    title: "Cara Meningkatkan Peringkat Website di Google (2026)",
+    description: "Strategi SEO terbaru untuk meningkatkan peringkat website bisnis Anda di halaman pertama Google. Panduan lengkap dari technical SEO hingga content marketing.",
+    pubDate: "1 Juni 2026",
+    tags: ["SEO", "Google"],
+    link: "/blog/cara-meningkatkan-peringkat-website-di-google/"
+  },
+  {
+    title: "Panduan Lengkap Memilih Jasa Pembuatan Website untuk Bisnis Anda",
+    description: "Tips memilih jasa pembuatan website yang tepat. Pelajari faktor penting seperti portofolio, teknologi, SEO, dan biaya.",
+    pubDate: "15 Juni 2026",
+    tags: ["Tips", "Website"],
+    link: "/blog/panduan-memilih-jasa-pembuatan-website/"
+  },
+  {
+    title: "Pentingnya Page Experience untuk Bisnis Online",
+    description: "Pelajari mengapa Page Experience dan Core Web Vitals penting untuk kesuksesan website bisnis Anda dan bagaimana cara mengoptimalkannya.",
+    pubDate: "20 Mei 2026",
+    tags: ["Page Experience", "SEO"],
+    link: "/blog/pentingnya-page-experience-untuk-bisnis-online/"
+  }
+];
+
+const itemListSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Artikel Blog",
+  "description": description,
+  "itemListElement": [
+    ...localPosts.map((post, i) => ({
+      "@type": "ListItem",
+      "position": i + 1,
+      "url": `https://firmanjs.github.io${post.link}`
+    })),
+    ...mediumPosts.map((post, i) => ({
+      "@type": "ListItem",
+      "position": localPosts.length + i + 1,
+      "url": post.link
+    }))
+  ],
+  "numberOfItems": localPosts.length + mediumPosts.length
+};
 ---
 
-<BaseLayout title={title} description={description} canonical={canonical}>
+<BaseLayout title={title} description={description} canonical={canonical} jsonLd={itemListSchema}>
   <section class="bg-gradient-to-br from-blue-50 via-white to-blue-50 py-16">
     <div class="max-w-4xl mx-auto px-4 text-center">
       <h1 class="text-4xl font-bold text-gray-900">Blog</h1>
@@ -19,32 +63,61 @@ const mediumPosts = await fetchMediumPosts();
   </section>
 
   <section class="max-w-6xl mx-auto px-4 py-16">
-    {mediumPosts.length > 0 ? (
+    {(localPosts.length > 0 || mediumPosts.length > 0) ? (
       <>
-        <h2 class="text-2xl font-bold text-gray-900 mb-6">Artikel Terbaru</h2>
-        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {mediumPosts.map(post => (
-            <article class="bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-lg transition-shadow">
-              <a href={post.link} target="_blank" rel="noopener noreferrer">
-                {post.thumbnail ? (
-                  <img src={post.thumbnail} alt={post.title} class="w-full h-44 object-cover" loading="lazy" />
-                ) : (
-                  <div class="w-full h-44 bg-gradient-to-br from-blue-100 via-blue-50 to-purple-100 flex items-center justify-center">
-                    <svg class="w-12 h-12 text-blue-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"/>
-                    </svg>
-                  </div>
-                )}
-                <div class="p-5">
-                  <h3 class="font-semibold text-gray-900">{post.title}</h3>
-                  <p class="text-xs text-gray-500 mt-1">{post.pubDate}</p>
-                  <p class="text-sm text-gray-600 mt-2">{post.description}</p>
-                  <span class="inline-block mt-3 text-sm font-medium text-primary hover:underline">Baca di Medium →</span>
-                </div>
-              </a>
-            </article>
-          ))}
-        </div>
+        {localPosts.length > 0 && (
+          <>
+            <h2 class="text-2xl font-bold text-gray-900 mb-6">Artikel Terbaru</h2>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+              {localPosts.map(post => (
+                <article class="bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-lg transition-shadow">
+                  <a href={post.link}>
+                    <div class="w-full h-44 bg-gradient-to-br from-blue-100 via-blue-50 to-purple-100 flex items-center justify-center">
+                      <svg class="w-12 h-12 text-blue-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"/>
+                      </svg>
+                    </div>
+                    <div class="p-5">
+                      <h3 class="font-semibold text-gray-900">{post.title}</h3>
+                      <p class="text-xs text-gray-500 mt-1">{post.pubDate}</p>
+                      <p class="text-sm text-gray-600 mt-2">{post.description}</p>
+                      <span class="inline-block mt-3 text-sm font-medium text-primary hover:underline">Baca Selengkapnya →</span>
+                    </div>
+                  </a>
+                </article>
+              ))}
+            </div>
+          </>
+        )}
+
+        {mediumPosts.length > 0 && (
+          <>
+            <h2 class="text-xl font-bold text-gray-900 mb-6">Dari Medium</h2>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {mediumPosts.map(post => (
+                <article class="bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-lg transition-shadow">
+                  <a href={post.link} target="_blank" rel="noopener noreferrer">
+                    {post.thumbnail ? (
+                      <img src={post.thumbnail} alt={post.title} class="w-full h-44 object-cover" loading="lazy" />
+                    ) : (
+                      <div class="w-full h-44 bg-gradient-to-br from-blue-100 via-blue-50 to-purple-100 flex items-center justify-center">
+                        <svg class="w-12 h-12 text-blue-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"/>
+                        </svg>
+                      </div>
+                    )}
+                    <div class="p-5">
+                      <h3 class="font-semibold text-gray-900">{post.title}</h3>
+                      <p class="text-xs text-gray-500 mt-1">{post.pubDate}</p>
+                      <p class="text-sm text-gray-600 mt-2">{post.description}</p>
+                      <span class="inline-block mt-3 text-sm font-medium text-primary hover:underline">Baca di Medium →</span>
+                    </div>
+                  </a>
+                </article>
+              ))}
+            </div>
+          </>
+        )}
       </>
     ) : (
       <div class="text-center py-20">

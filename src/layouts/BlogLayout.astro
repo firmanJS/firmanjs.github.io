@@ -21,18 +21,38 @@ const blogSchema = {
   "author": {
     "@type": "Person",
     "name": "Firman Abdul Hakim",
-    "url": "https://firmanjs.github.io/"
+    "url": "https://firmanjs.github.io/",
+    "sameAs": [
+      "https://www.linkedin.com/in/firman-abdul-hakim-2a818b92",
+      "https://github.com/firmanJS",
+      "https://medium.com/@firmanabdulhakim"
+    ]
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "Firman Abdul Hakim"
   }
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Beranda", "item": "https://firmanjs.github.io/" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://firmanjs.github.io/blog/" },
+    { "@type": "ListItem", "position": 3, "name": title }
+  ]
 };
 ---
 
-<BaseLayout title={`${title} | Blog Firman Abdul Hakim`} description={description} canonical={canonical} ogType="article" jsonLd={blogSchema}>
+<BaseLayout title={`${title} | Blog Firman Abdul Hakim`} description={description} canonical={canonical} ogType="article" jsonLd={[blogSchema, breadcrumbSchema]}>
   <article class="max-w-4xl mx-auto px-4 py-12">
     <div class="mb-8">
       <p class="text-sm text-gray-500">{Astro.props.pubDate}</p>
       <div class="flex flex-wrap gap-1.5 mt-2">
         {tags?.map(t => <span class="text-xs bg-blue-50 text-primary px-2 py-0.5 rounded">{t}</span>)}
       </div>
+      <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mt-4">{title}</h1>
     </div>
     <div class="prose prose-gray max-w-none">
       <slot />

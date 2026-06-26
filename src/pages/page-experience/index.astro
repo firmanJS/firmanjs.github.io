@@ -6,7 +6,7 @@ const title = "Pengalaman Kerja - Firman Abdul Hakim | Senior Software Engineer 
 const description = "9+ tahun pengalaman sebagai Senior Software Engineer spesialis Backend. Pernah bekerja di PT Logika Sarana Teknologi, Jabar Digital Service, PT LAPI Divusi, dan PT Munjalindra Karya Indonesia.";
 const canonical = "https://firmanjs.github.io/page-experience/";
 
-const schema = {
+const personSchema = {
   "@context": "https://schema.org",
   "@type": "Person",
   "name": "Firman Abdul Hakim",
@@ -22,9 +22,18 @@ const schema = {
     "https://www.youtube.com/channel/UCZJtIl8S_oE1W1JW0tnaiwQ"
   ]
 };
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Beranda", "item": "https://firmanjs.github.io/" },
+    { "@type": "ListItem", "position": 2, "name": "Pengalaman Kerja" }
+  ]
+};
 ---
 
-<BaseLayout title={title} description={description} canonical={canonical} jsonLd={schema}>
+<BaseLayout title={title} description={description} canonical={canonical} jsonLd={[personSchema, breadcrumbSchema]}>
   <section class="bg-gradient-to-br from-blue-50 via-white to-blue-50 py-16 md:py-20">
     <div class="max-w-4xl mx-auto px-4 text-center">
       <h1 class="text-3xl md:text-4xl font-bold text-gray-900">Pengalaman Kerja</h1>
@@ -41,7 +50,7 @@ const schema = {
         <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2 mb-4">
           <div>
             <h2 class="text-xl font-bold text-gray-900">PT. Logika Sarana Teknologi <span class="text-xs font-medium bg-blue-100 text-blue-700 rounded px-2 py-0.5">Full Remote</span></h2>
-            <p class="text-primary font-semibold">Principal Engineer (Backend)</p>
+            <h3 class="text-primary font-semibold">Principal Engineer (Backend)</h3>
             <p class="text-sm text-gray-500 mt-1">PHP, MySQL, Git, Jenkins, PostgreSQL, Docker, Node.js, Fastify, Express.js, AWS</p>
           </div>
           <span class="text-sm text-gray-500 shrink-0 whitespace-nowrap">Jan 2022 – Apr 2026</span>
@@ -70,7 +79,7 @@ const schema = {
         <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2 mb-4">
           <div>
             <h2 class="text-xl font-bold text-gray-900">Jabar Digital Service <span class="text-xs font-medium bg-blue-100 text-blue-700 rounded px-2 py-0.5">Hybrid</span></h2>
-            <p class="text-primary font-semibold">Senior Software Engineer (Backend)</p>
+            <h3 class="text-primary font-semibold">Senior Software Engineer (Backend)</h3>
             <p class="text-sm text-gray-500 mt-1">PHP, MySQL, Git, Jenkins, PostgreSQL, Docker, Python, Node.js, Hapi.js, Express.js, Flask, AWS</p>
           </div>
           <span class="text-sm text-gray-500 shrink-0 whitespace-nowrap">Oct 2019 – Dec 2021</span>
@@ -96,7 +105,7 @@ const schema = {
         <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2 mb-4">
           <div>
             <h2 class="text-xl font-bold text-gray-900">PT LAPI Divusi</h2>
-            <p class="text-primary font-semibold">Software Engineer</p>
+            <h3 class="text-primary font-semibold">Software Engineer</h3>
             <p class="text-sm text-gray-500 mt-1">PHP, MySQL, Oracle, HTML, CSS, JavaScript, jQuery, Bootstrap, CodeIgniter, Laravel</p>
           </div>
           <span class="text-sm text-gray-500 shrink-0 whitespace-nowrap">Apr 2017 – Sep 2019</span>
@@ -120,7 +129,7 @@ const schema = {
         <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2 mb-4">
           <div>
             <h2 class="text-xl font-bold text-gray-900">PT Munjalindra Karya Indonesia</h2>
-            <p class="text-primary font-semibold">Fullstack Web Developer</p>
+            <h3 class="text-primary font-semibold">Fullstack Web Developer</h3>
             <p class="text-sm text-gray-500 mt-1">PHP, Git, MySQL, HTML, CSS, JavaScript, jQuery, Bootstrap, CodeIgniter</p>
           </div>
           <span class="text-sm text-gray-500 shrink-0 whitespace-nowrap">Nov 2016 – Mar 2017</span>

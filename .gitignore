@@ -30,6 +30,11 @@ Thumbs.db
 tmp/
 temp/
 
+# Legacy files (migrated to public/)
+/assets/
+/service-worker.js
+/sitemap.xml
+
 # Secrets (never commit)
 *.pem
 *.key

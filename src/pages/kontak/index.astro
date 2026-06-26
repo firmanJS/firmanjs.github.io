@@ -5,15 +5,40 @@ import ContactForm from '../../components/ContactForm.astro';
 const title = "Kontak | Konsultasi Jasa Pembuatan Website Gratis";
 const description = "Hubungi Firman Abdul Hakim untuk konsultasi gratis jasa pembuatan website profesional. Tersedia via WhatsApp, email, atau form kontak. Melayani Sukabumi dan seluruh Indonesia.";
 const canonical = "https://firmanjs.github.io/kontak/";
+
+const contactSchema = {
+  "@context": "https://schema.org",
+  "@type": "ContactPoint",
+  "name": "Firman Abdul Hakim - Jasa Pembuatan Website",
+  "telephone": "+62-813-1881-6013",
+  "email": "firman@example.com",
+  "contactType": "customer support",
+  "availableLanguage": ["Indonesia", "English"],
+  "areaServed": ["ID", "Indonesia"],
+  "url": "https://firmanjs.github.io/kontak/"
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Beranda", "item": "https://firmanjs.github.io/" },
+    { "@type": "ListItem", "position": 2, "name": "Kontak" }
+  ]
+};
 ---
 
-<BaseLayout title={title} description={description} canonical={canonical}>
+<BaseLayout title={title} description={description} canonical={canonical} jsonLd={[contactSchema, breadcrumbSchema]}>
   <section class="bg-gradient-to-br from-blue-50 via-white to-blue-50 py-16">
     <div class="max-w-4xl mx-auto px-4 text-center">
       <h1 class="text-4xl font-bold text-gray-900">Hubungi Saya</h1>
       <p class="text-gray-600 mt-3 max-w-2xl mx-auto">
         Siap memulai proyek website Anda? Isi form di bawah atau hubungi langsung via WhatsApp. 
         <strong>Konsultasi gratis</strong> tanpa kewajiban.
+      </p>
+      <p class="text-sm text-gray-500 mt-2">
+        Lihat <a href="/jasa/" class="text-primary hover:underline">layanan pembuatan website</a> 
+        atau <a href="/page-experience/" class="text-primary hover:underline">pengalaman kerja</a> saya terlebih dahulu.
       </p>
     </div>
   </section>

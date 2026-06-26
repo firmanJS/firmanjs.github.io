@@ -2,16 +2,41 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 
 const title = "Halaman Tidak Ditemukan - 404 | Firman Abdul Hakim";
-const description = "Halaman yang Anda cari tidak ditemukan. Kembali ke beranda.";
+const description = "Halaman yang Anda cari tidak ditemukan. Kembali ke beranda atau gunakan navigasi yang tersedia.";
 ---
 
-<BaseLayout title={title} description={description}>
-  <section class="max-w-2xl mx-auto px-4 py-24 text-center">
-    <h1 class="text-6xl md:text-8xl font-bold text-primary/30">404</h1>
-    <h2 class="text-2xl font-bold text-gray-900 mt-4">Halaman Tidak Ditemukan</h2>
-    <p class="text-gray-600 mt-2">Halaman yang Anda cari mungkin telah dipindahkan atau tidak tersedia.</p>
-    <a href="/" class="mt-8 inline-flex items-center gap-2 px-6 py-3 bg-primary text-white rounded-lg font-medium hover:bg-primary-dark transition-colors shadow-md">
-      Kembali ke Beranda
-    </a>
+<BaseLayout title={title} description={description} ogType="404" noindex={true}>
+  <section class="flex-1 flex items-center justify-center min-h-[60vh]">
+    <div class="max-w-lg mx-auto px-4 py-20 text-center">
+      <div class="w-20 h-20 bg-red-50 rounded-full flex items-center justify-center mx-auto">
+        <svg class="w-10 h-10 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+        </svg>
+      </div>
+      <h1 class="text-5xl md:text-6xl font-bold text-gray-900 mt-6">404</h1>
+      <p class="text-gray-500 text-lg mt-2">Halaman tidak ditemukan</p>
+      <p class="text-gray-400 text-sm mt-3 max-w-sm mx-auto">Halaman yang Anda cari mungkin telah dipindahkan, dihapus, atau tidak tersedia.</p>
+      <div class="flex flex-wrap justify-center gap-3 mt-8">
+        <a href="/" class="inline-flex items-center gap-2 px-5 py-2.5 bg-primary text-white rounded-lg font-medium hover:bg-primary-dark transition-colors shadow-sm">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+          </svg>
+          Kembali ke Beranda
+        </a>
+        <a href="/kontak/" class="inline-flex items-center gap-2 px-5 py-2.5 border border-gray-300 rounded-lg font-medium text-gray-700 hover:bg-gray-50 transition-colors">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+          </svg>
+          Hubungi Saya
+        </a>
+      </div>
+      <div class="mt-10 pt-8 border-t border-gray-100">
+        <p class="text-sm text-gray-500 mb-4">Coba halaman lain:</p>
+        <div class="flex flex-wrap justify-center gap-2 text-sm">
+          <a href="/" class="px-3 py-1.5 rounded-lg bg-gray-100 text-gray-700 hover:bg-gray-200 transition-colors">Beranda</a>
+          <a href="/jasa/" class="px-3 py-1.5 rounded-lg bg-gray-100 text-gray-700 hover:bg-gray-200 transition-colors">Jasa</a>
+          <a href="/blog/" class="px-3 py-1.5 rounded-lg bg-gray-100 text-gray-700 hover:bg-gray-200 transition-colors">Blog</a>
+          <a href="/tentang/" class="px-3 py-1.5 rounded-lg bg-gray-100 text-gray-700 hover:bg-gray-200 transition-colors">Tentang</a>
+        </div>
+      </div>
+    </div>
   </section>
 </BaseLayout>
