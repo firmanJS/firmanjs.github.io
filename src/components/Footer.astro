@@ -1,0 +1,67 @@
+---
+const currentYear = new Date().getFullYear();
+
+const localBusiness = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Firman Abdul Hakim - Jasa Pembuatan Website",
+  "url": "https://firmanjs.github.io/",
+  "telephone": "+62-",
+  "email": "firman@example.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Sukabumi",
+    "addressRegion": "Jawa Barat",
+    "addressCountry": "ID"
+  },
+  "areaServed": ["ID", "Indonesia"],
+  "priceRange": "$$",
+  "description": "Jasa pembuatan website profesional di Sukabumi dan seluruh Indonesia. Spesialis website company profile, toko online, web app custom, dan optimasi SEO.",
+  "sameAs": [
+    "https://www.linkedin.com/in/firman-abdul-hakim-2a818b92",
+    "https://github.com/firmanJS",
+    "https://medium.com/@firmanabdulhakim"
+  ]
+};
+---
+
+<footer class="bg-gray-900 text-gray-300">
+  <div class="max-w-6xl mx-auto px-4 py-12">
+    <div class="grid md:grid-cols-4 gap-8">
+      <div class="md:col-span-2">
+        <div class="flex items-center gap-2 mb-3">
+          <img src="/assets/img/logo.png" alt="Firman Abdul Hakim" class="w-8 h-8" />
+          <span class="font-bold text-lg text-white">Firman Abdul Hakim</span>
+        </div>
+        <p class="text-sm leading-relaxed max-w-md">
+          Specialist jasa pembuatan website profesional di Sukabumi dan seluruh Indonesia. 
+          Berpengalaman 9+ tahun dalam web development, microservices, API, dan optimasi SEO. 
+          Solusi website cepat, aman, dan ramah SEO untuk bisnis Anda.
+        </p>
+      </div>
+      <div>
+        <h3 class="font-semibold text-white mb-3">Layanan</h3>
+        <ul class="space-y-2 text-sm">
+          <li><a href="/jasa/" class="hover:text-white transition-colors">Website Company Profile</a></li>
+          <li><a href="/jasa/" class="hover:text-white transition-colors">Toko Online</a></li>
+          <li><a href="/jasa/" class="hover:text-white transition-colors">Web App Custom</a></li>
+          <li><a href="/page-experience/" class="hover:text-white transition-colors">Optimasi SEO</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="font-semibold text-white mb-3">Navigasi</h3>
+        <ul class="space-y-2 text-sm">
+          <li><a href="/" class="hover:text-white transition-colors">Beranda</a></li>
+          <li><a href="/blog/" class="hover:text-white transition-colors">Blog</a></li>
+          <li><a href="/tentang/" class="hover:text-white transition-colors">Tentang</a></li>
+          <li><a href="/kontak/" class="hover:text-white transition-colors">Kontak</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="mt-8 pt-8 border-t border-gray-700 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs">
+      <p>&copy; 2016 - {currentYear} Firman Abdul Hakim. All rights reserved.</p>
+      <p class="text-gray-400">Jasa Pembuatan Website Sukabumi & Indonesia</p>
+    </div>
+  </div>
+  <script type="application/ld+json" set:html={JSON.stringify(localBusiness)} />
+</footer>

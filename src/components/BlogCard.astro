@@ -1,0 +1,27 @@
+---
+export interface Props {
+  title: string;
+  description: string;
+  slug: string;
+  pubDate: string;
+  tags?: string[];
+  image?: string;
+}
+
+const { title, description, slug, pubDate, tags = [], image } = Astro.props;
+---
+
+<article class="bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-lg transition-shadow">
+  <a href={`/blog/${slug}/`}>
+    {image && <img src={image} alt={title} class="w-full h-44 object-cover" loading="lazy" />}
+    <div class="p-5">
+      <div class="flex flex-wrap gap-1.5 mb-2">
+        {tags.map(t => <span class="text-xs bg-blue-50 text-primary px-2 py-0.5 rounded">{t}</span>)}
+      </div>
+      <h3 class="font-semibold text-gray-900 group-hover:text-primary transition-colors">{title}</h3>
+      <p class="text-xs text-gray-500 mt-1">{pubDate}</p>
+      <p class="text-sm text-gray-600 mt-2 leading-relaxed">{description}</p>
+      <span class="inline-block mt-3 text-sm font-medium text-primary hover:underline">Baca Selengkapnya →</span>
+    </div>
+  </a>
+</article>

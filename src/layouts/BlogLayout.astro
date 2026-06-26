@@ -1,0 +1,44 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import WhatsAppButton from '../components/WhatsAppButton.astro';
+
+export interface Props {
+  title: string;
+  description: string;
+  canonical?: string;
+  pubDate: string;
+  tags?: string[];
+}
+
+const { title, description, canonical, tags = [] } = Astro.props;
+
+const blogSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": title,
+  "description": description,
+  "datePublished": Astro.props.pubDate,
+  "author": {
+    "@type": "Person",
+    "name": "Firman Abdul Hakim",
+    "url": "https://firmanjs.github.io/"
+  }
+};
+---
+
+<BaseLayout title={`${title} | Blog Firman Abdul Hakim`} description={description} canonical={canonical} ogType="article" jsonLd={blogSchema}>
+  <article class="max-w-4xl mx-auto px-4 py-12">
+    <div class="mb-8">
+      <p class="text-sm text-gray-500">{Astro.props.pubDate}</p>
+      <div class="flex flex-wrap gap-1.5 mt-2">
+        {tags?.map(t => <span class="text-xs bg-blue-50 text-primary px-2 py-0.5 rounded">{t}</span>)}
+      </div>
+    </div>
+    <div class="prose prose-gray max-w-none">
+      <slot />
+    </div>
+  </article>
+
+  <WhatsAppButton />
+
+</BaseLayout>

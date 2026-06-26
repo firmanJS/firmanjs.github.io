@@ -1,0 +1,44 @@
+---
+export interface Props {
+  title: string;
+  description: string;
+  icon: string;
+  features: string[];
+  href: string;
+}
+
+const { title, description, icon, features, href } = Astro.props;
+
+const icons = {
+  company: `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>`,
+  shop: `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 100 4 2 2 0 000-4z"/></svg>`,
+  custom: `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>`,
+  seo: `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>`,
+};
+
+const bgColors: Record<string, string> = {
+  company: "bg-blue-100 text-blue-600",
+  shop: "bg-emerald-100 text-emerald-600",
+  custom: "bg-purple-100 text-purple-600",
+  seo: "bg-orange-100 text-orange-600",
+};
+---
+
+<a href={href} class="group block bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-all hover:border-primary/30">
+  <div class={`w-11 h-11 rounded-xl flex items-center justify-center ${bgColors[icon]}`}>
+    <span set:html={icons[icon]} />
+  </div>
+  <h3 class="font-semibold text-lg text-gray-900 mt-4 group-hover:text-primary transition-colors">{title}</h3>
+  <p class="text-sm text-gray-600 mt-2 leading-relaxed">{description}</p>
+  <ul class="mt-4 space-y-1.5">
+    {features.map(f => (
+      <li class="text-xs text-gray-500 flex items-start gap-1.5">
+        <svg class="w-3.5 h-3.5 text-green-500 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+        {f}
+      </li>
+    ))}
+  </ul>
+  <span class="inline-block mt-4 text-sm font-medium text-primary group-hover:underline">
+    Selengkapnya →
+  </span>
+</a>

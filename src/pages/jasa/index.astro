@@ -1,0 +1,226 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import WhatsAppButton from '../../components/WhatsAppButton.astro';
+
+const title = "Jasa Pembuatan Website Profesional Sukabumi & Indonesia | Firman Abdul Hakim";
+const description = "Jasa pembuatan website profesional untuk bisnis Anda. Layanan: Company Profile, Toko Online, Web App Custom, SEO. Berpengalaman 9+ tahun. Konsultasi gratis!";
+const canonical = "https://firmanjs.github.io/jasa/";
+
+const phoneNumber = '6281234567890';
+const waMessage = encodeURIComponent('Halo Firman, Saya tertarik dengan jasa pembuatan website. Bisa diskusi?');
+
+const services = [
+  {
+    id: "company-profile",
+    icon: "🏢",
+    title: "Website Company Profile",
+    desc: "Website profesional untuk memperkenalkan perusahaan, produk, dan layanan Anda. Design modern, responsive, SEO-friendly, dilengkapi admin panel.",
+    features: ["Design modern & responsive", "SEO optimized", "Admin panel", "Integrasi Google Maps", "Contact form"],
+  },
+  {
+    id: "toko-online",
+    icon: "🛒",
+    title: "Toko Online / E-Commerce",
+    desc: "Website e-commerce siap pakai dengan sistem manajemen produk, keranjang belanja, payment gateway, dan dashboard penjualan.",
+    features: ["Manajemen produk & kategori", "Payment gateway", "Manajemen order", "Dashboard laporan", "Multi-user role"],
+  },
+  {
+    id: "custom-app",
+    icon: "⚡",
+    title: "Web App Custom",
+    desc: "Aplikasi web sesuai kebutuhan spesifik bisnis Anda. Dibangun dengan teknologi modern (Laravel, Node.js, Python, Go) dan scalable.",
+    features: ["Analisis kebutuhan", "REST API / GraphQL", "Third-party integration", "Scalable architecture", "Deployment & CI/CD"],
+  },
+  {
+    id: "seo",
+    icon: "📈",
+    title: "SEO & Page Experience",
+    desc: "Optimasi website agar muncul di halaman pertama Google. Fokus pada Core Web Vitals, kecepatan loading, dan technical SEO.",
+    features: ["Audit SEO menyeluruh", "Optimasi Core Web Vitals", "Riset keyword", "Mobile optimization", "Laporan berkala"],
+  },
+  {
+    id: "maintenance",
+    icon: "🔧",
+    title: "Maintenance & Support",
+    desc: "Perawatan website rutin: update konten, backup, monitoring performa, update keamanan, dan support via WhatsApp.",
+    features: ["Update konten & artikel", "Backup database rutin", "Monitoring performa", "Update security patch", "Support prioritas"],
+  },
+];
+
+const faqItems = [
+  { q: "Berapa lama waktu pembuatan website?", a: "Tergantung jenis website. Company profile selesai dalam 7-14 hari kerja. Toko online 14-30 hari. Web app custom menyesuaikan kompleksitas." },
+  { q: "Apiki website saya akan SEO friendly?", a: "Ya, setiap website yang saya buat sudah dioptimasi SEO dari awal: struktur HTML semantic, meta tags, schema markup, kecepatan loading, mobile friendly, dan sitemap." },
+  { q: "Apakah saya bisa update konten sendiri?", a: "Tentu. Website dilengkapi admin panel yang mudah digunakan. Anda bisa update konten, upload gambar, tambah halaman, dan kelola blog tanpa perlu skill coding." },
+  { q: "Apakah domain & hosting sudah termasuk?", a: "Harga pembuatan website adalah biaya pengembangan. Domain dan hosting terpisah. Saya bantu rekomendasikan dan atur yang sesuai dengan kebutuhan Anda." },
+  { q: "Apakah melayani luar Sukabumi?", a: "Ya, saya melayani seluruh Indonesia. Proses kerja 100% online — diskusi via WhatsApp/Zoom, progress via link preview." },
+  { q: "Bagaimana cara pesan?", a: "Hubungi saya via WhatsApp atau email untuk konsultasi gratis. Kita diskusi kebutuhan Anda, lalu saya buatkan proposal dan estimasi harga." },
+];
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Jasa Pembuatan Website Profesional",
+  "description": description,
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "Firman Abdul Hakim - Jasa Pembuatan Website",
+    "address": { "@type": "PostalAddress", "addressLocality": "Sukabumi", "addressRegion": "Jawa Barat", "addressCountry": "ID" },
+    "telephone": "+62-812-3456-7890"
+  },
+  "areaServed": "Indonesia"
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqItems.map(item => ({
+    "@type": "Question",
+    "name": item.q,
+    "acceptedAnswer": { "@type": "Answer", "text": item.a }
+  }))
+};
+---
+
+<BaseLayout title={title} description={description} canonical={canonical} jsonLd={[serviceSchema, faqSchema]}>
+  <section class="bg-gradient-to-br from-blue-50 via-white to-blue-50 py-16 md:py-20">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h1 class="text-3xl md:text-4xl font-bold text-gray-900">Jasa Pembuatan Website Profesional</h1>
+      <p class="text-gray-600 mt-3 max-w-2xl mx-auto text-base md:text-lg">
+        Dari company profile hingga aplikasi web custom — setiap website dibangun dengan standar kualitas tinggi, 
+        optimasi SEO, dan pengalaman 9+ tahun di dunia software engineering.
+      </p>
+      <p class="text-sm text-gray-500 mt-2">Melayani <strong>Sukabumi, Jawa Barat, dan seluruh Indonesia</strong></p>
+      <div class="flex flex-wrap justify-center gap-3 mt-8">
+        <a href={`https://wa.me/${phoneNumber}?text=${waMessage}`} target="_blank" rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 px-6 py-3 bg-green-500 hover:bg-green-600 text-white rounded-lg font-medium transition-colors shadow-md">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Konsultasi Gratis via WhatsApp
+        </a>
+        <a href="/kontak/"
+          class="inline-flex items-center gap-2 px-6 py-3 border border-gray-300 rounded-lg font-medium hover:bg-gray-50 transition-colors">
+          <svg class="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          Kirim Email
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-6xl mx-auto px-4 py-16">
+    <div class="text-center mb-12">
+      <h2 class="text-2xl md:text-3xl font-bold text-gray-900">Layanan Saya</h2>
+      <p class="text-gray-600 mt-2">Bingung butuh website apa? Diskusikan dengan saya — konsultasi gratis, tanpa kewajiban.</p>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {services.map(s => (
+        <div id={s.id} class="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-shadow">
+          <div class="text-3xl mb-3">{s.icon}</div>
+          <h3 class="font-semibold text-lg text-gray-900">{s.title}</h3>
+          <p class="text-sm text-gray-600 mt-2 leading-relaxed">{s.desc}</p>
+          <ul class="mt-4 space-y-1.5">
+            {s.features.map(f => (
+              <li class="text-xs text-gray-500 flex items-start gap-1.5">
+                <svg class="w-3.5 h-3.5 text-green-500 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                {f}
+              </li>
+            ))}
+          </ul>
+          <a href={`https://wa.me/${phoneNumber}?text=${encodeURIComponent(`Halo, Saya tertarik dengan layanan ${s.title}. Bisa diskusi?`)}`} target="_blank" rel="noopener noreferrer"
+            class="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-green-600 hover:text-green-700">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Tanya via WhatsApp
+          </a>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="bg-gray-50 py-16">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-2xl md:text-3xl font-bold text-center text-gray-900 mb-4">Mengapa Memilih Saya?</h2>
+      <p class="text-center text-gray-600 mb-10">Bukan sekadar bikin website — Saya bangun solusi digital yang tepat untuk bisnis Anda.</p>
+      <div class="grid sm:grid-cols-3 gap-6">
+        <div class="text-center p-6 bg-white rounded-xl border border-gray-200">
+          <div class="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center mx-auto text-blue-600">
+            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          </div>
+          <h3 class="font-semibold mt-4">9+ Tahun Pengalaman</h3>
+          <p class="text-sm text-gray-500 mt-2">Senior Software Engineer dengan pengalaman di perusahaan teknologi terkemuka.</p>
+        </div>
+        <div class="text-center p-6 bg-white rounded-xl border border-gray-200">
+          <div class="w-14 h-14 bg-green-100 rounded-xl flex items-center justify-center mx-auto text-green-600">
+            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+          </div>
+          <h3 class="font-semibold mt-4">SEO & Page Speed</h3>
+          <p class="text-sm text-gray-500 mt-2">Optimasi Core Web Vitals, kecepatan loading, dan mobile-friendly untuk ranking Google.</p>
+        </div>
+        <div class="text-center p-6 bg-white rounded-xl border border-gray-200">
+          <div class="w-14 h-14 bg-purple-100 rounded-xl flex items-center justify-center mx-auto text-purple-600">
+            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+          </div>
+          <h3 class="font-semibold mt-4">Fast & Secure</h3>
+          <p class="text-sm text-gray-500 mt-2">Performa cepat, keamanan terjamin, dan mobile-friendly.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-6xl mx-auto px-4 py-16">
+    <div class="text-center mb-10">
+      <h2 class="text-2xl md:text-3xl font-bold text-gray-900">Optimasi Page Speed & Core Web Vitals</h2>
+      <p class="text-gray-600 mt-2 max-w-2xl mx-auto">Website cepat adalah kunci sukses di era digital. Saya optimasi seluruh aspek performa website Anda agar memenuhi standar Google Page Experience.</p>
+    </div>
+    <div class="grid md:grid-cols-2 gap-4">
+      {[
+        { title: "Audit Performa", desc: "Analisis Lighthouse, PageSpeed Insights, GTmetrix untuk identifikasi bottleneck." },
+        { title: "Optimasi Kecepatan", desc: "Image compression, minifikasi kode, lazy loading, caching strategy, CDN." },
+        { title: "Mobile Optimization", desc: "Website responsif sempurna di semua perangkat mobile." },
+        { title: "Core Web Vitals Fix", desc: "Perbaikan LCP, INP, dan CLS agar memenuhi standar Google." },
+        { title: "HTTPS & Keamanan", desc: "SSL certificate, security headers, best practice keamanan." },
+        { title: "Monitoring Berkala", desc: "Laporan skor performa dan rekomendasi perbaikan rutin." },
+      ].map(item => (
+        <div class="flex items-start gap-3 bg-white border border-gray-200 rounded-xl p-5">
+          <svg class="w-5 h-5 text-green-500 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          <div>
+            <h3 class="font-semibold text-sm">{item.title}</h3>
+            <p class="text-xs text-gray-500 mt-1">{item.desc}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="max-w-4xl mx-auto px-4 py-16">
+    <h2 class="text-2xl md:text-3xl font-bold text-center text-gray-900 mb-10">Pertanyaan Umum (FAQ)</h2>
+    <div class="space-y-3">
+      {faqItems.map(item => (
+        <details class="bg-white border border-gray-200 rounded-xl p-4 md:p-5 group">
+          <summary class="font-semibold text-sm cursor-pointer list-none flex justify-between items-center gap-2">
+            {item.q}
+            <svg class="w-4 h-4 text-gray-400 shrink-0 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <p class="text-sm text-gray-600 mt-3 leading-relaxed">{item.a}</p>
+        </details>
+      ))}
+    </div>
+  </section>
+
+  <section class="bg-primary py-12">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h2 class="text-xl md:text-2xl font-bold text-white">Siap Memulai Proyek Website?</h2>
+      <p class="text-white/80 mt-2">Hubungi saya sekarang untuk konsultasi gratis. Diskusikan kebutuhan website Anda tanpa kewajiban.</p>
+      <div class="flex flex-wrap justify-center gap-3 mt-6">
+        <a href={`https://wa.me/${phoneNumber}?text=${waMessage}`} target="_blank" rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 px-6 py-3 bg-white text-primary rounded-lg font-medium hover:bg-gray-100 transition-colors shadow-md">
+          <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Konsultasi Gratis via WhatsApp
+        </a>
+        <a href="/kontak/"
+          class="inline-flex items-center gap-2 px-6 py-3 bg-white/10 text-white border border-white/30 rounded-lg font-medium hover:bg-white/20 transition-colors">
+          Kirim Email
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <WhatsAppButton />
+</BaseLayout>

@@ -1,0 +1,69 @@
+---
+import '../styles/global.css';
+import PwaUpdate from '../components/PwaUpdate.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+export interface Props {
+  title: string;
+  description: string;
+  canonical?: string;
+  ogImage?: string;
+  ogType?: string;
+  jsonLd?: any;
+}
+
+const {
+  title,
+  description,
+  canonical = 'https://firmanjs.github.io/',
+  ogImage = 'https://firmanjs.github.io/assets/img/logo.png',
+  ogType = 'website',
+  jsonLd,
+} = Astro.props;
+
+const keywords = 'backend developer, senior backend engineer, software engineer, jasa pembuatan website, jasa website profesional, pembuatan website Sukabumi, PHP, Node.js, Python, Go, microservices, API development';
+---
+
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="keywords" content={keywords} />
+    <meta name="author" content="Firman Abdul Hakim" />
+    <meta name="robots" content="index, follow" />
+    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:site_name" content="Firman Abdul Hakim - Senior Software Engineer (Backend)" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <link rel="shortcut icon" href="/assets/img/logo.png" />
+    <link rel="canonical" href={canonical} />
+    <link rel="alternate" href={canonical} hreflang="id" />
+    <link rel="manifest" href="/manifest.json" />
+
+    {jsonLd && (
+      <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+    )}
+  </head>
+  <body class="bg-surface text-gray-900 font-sans antialiased">
+    <Header />
+    <main>
+      <slot />
+    </main>
+    <Footer />
+    <PwaUpdate />
+  </body>
+</html>

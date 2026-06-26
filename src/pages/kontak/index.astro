@@ -1,0 +1,23 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ContactForm from '../../components/ContactForm.astro';
+
+const title = "Kontak | Konsultasi Jasa Pembuatan Website Gratis";
+const description = "Hubungi Firman Abdul Hakim untuk konsultasi gratis jasa pembuatan website profesional. Tersedia via WhatsApp, email, atau form kontak. Melayani Sukabumi dan seluruh Indonesia.";
+const canonical = "https://firmanjs.github.io/kontak/";
+---
+
+<BaseLayout title={title} description={description} canonical={canonical}>
+  <section class="bg-gradient-to-br from-blue-50 via-white to-blue-50 py-16">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h1 class="text-4xl font-bold text-gray-900">Hubungi Saya</h1>
+      <p class="text-gray-600 mt-3 max-w-2xl mx-auto">
+        Siap memulai proyek website Anda? Isi form di bawah atau hubungi langsung via WhatsApp. 
+        <strong>Konsultasi gratis</strong> tanpa kewajiban.
+      </p>
+    </div>
+  </section>
+
+  <ContactForm />
+
+</BaseLayout>

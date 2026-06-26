@@ -1,0 +1,632 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ServiceCard from "../components/ServiceCard.astro";
+import Portfolio from "../components/Portfolio.astro";
+import WhatsAppButton from "../components/WhatsAppButton.astro";
+
+const title =
+  "Firman Abdul Hakim - Senior Software Engineer (Backend) | Portfolio & Jasa Pembuatan Website";
+const description =
+  "Firman Abdul Hakim — Senior Backend Engineer dengan 9+ tahun pengalaman membangun scalable microservices, API, dan backend systems. Jasa pembuatan website profesional di Sukabumi dan seluruh Indonesia.";
+const canonical = "https://firmanjs.github.io/";
+
+const services = [
+  {
+    title: "Website Company Profile",
+    description:
+      "Website profesional untuk memperkenalkan perusahaan, produk, dan layanan Anda. Design modern, responsive, dan SEO-friendly.",
+    icon: "company",
+    features: [
+      "Design modern & responsive",
+      "SEO optimized untuk Google",
+      "Halaman: Beranda, Profil, Layanan, Galeri, Kontak",
+      "Admin panel untuk update konten",
+      "Integrasi Google Maps & Sosial Media",
+    ],
+    href: "/jasa/#company-profile",
+  },
+  {
+    title: "Toko Online",
+    description:
+      "Website e-commerce siap pakai dengan sistem manajemen produk, keranjang belanja, dan payment gateway.",
+    icon: "shop",
+    features: [
+      "Manajemen produk & kategori",
+      "Keranjang belanja & checkout",
+      "Payment gateway (Midtrans, Xendit)",
+      "Manajemen order & status",
+      "Dashboard laporan penjualan",
+    ],
+    href: "/jasa/#toko-online",
+  },
+  {
+    title: "Web App Custom",
+    description:
+      "Aplikasi web sesuai kebutuhan spesifik bisnis Anda. Dibangun dengan teknologi modern dan scalable.",
+    icon: "custom",
+    features: [
+      "Analisis & design sesuai kebutuhan",
+      "Stack: Laravel, Node.js, Python, Go",
+      "Database MySQL, PostgreSQL, MongoDB",
+      "API integration pihak ketiga",
+      "Deploy & maintenance",
+    ],
+    href: "/jasa/#custom-app",
+  },
+  {
+    title: "SEO Optimization",
+    description:
+      "Optimasi website agar muncul di halaman pertama Google. Meningkatkan traffic organik dan konversi bisnis.",
+    icon: "seo",
+    features: [
+      "Audit SEO menyeluruh",
+      "Optimasi on-page & technical SEO",
+      "Riset keyword kompetitor",
+      "Optimasi Core Web Vitals",
+      "Laporan berkala",
+    ],
+    href: "/page-experience/",
+  },
+];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      name: "Firman Abdul Hakim",
+      url: canonical,
+      sameAs: [
+        "https://www.linkedin.com/in/firman-abdul-hakim-2a818b92",
+        "https://medium.com/@firmanabdulhakim",
+        "https://github.com/firmanJS",
+        "https://gitlab.com/firmanJS",
+        "https://www.youtube.com/channel/UCZJtIl8S_oE1W1JW0tnaiwQ",
+      ],
+      jobTitle: "Senior Software Engineer, Backend Specialist",
+      description: description,
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Sukabumi",
+        addressRegion: "West Java",
+        addressCountry: "ID",
+      },
+    },
+    {
+      "@type": "WebSite",
+      url: canonical,
+      name: "Firman Abdul Hakim - Senior Software Engineer (Backend)",
+      description: description,
+      potentialAction: {
+        "@type": "SearchAction",
+        target: {
+          "@type": "EntryPoint",
+          urlTemplate: `${canonical}?q={search_term_string}`,
+        },
+        "query-input": "required name=search_term_string",
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  jsonLd={schema}
+>
+  <section class="max-w-6xl mx-auto px-4 py-16 md:py-20">
+    <div
+      class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-8"
+    >
+      <div>
+        <h1 class="text-3xl md:text-4xl font-bold text-gray-900">
+          Firman Abdul Hakim
+        </h1>
+        <p class="text-lg md:text-xl text-primary font-semibold mt-1">
+          Senior Software Engineer (Backend)
+        </p>
+        <p class="mt-3 text-gray-600 leading-relaxed">
+          9+ years of experience designing and delivering scalable,
+          high-performance backend systems. Also available for <strong
+            >jasa pembuatan website</strong
+          > profesional.
+        </p>
+        <p class="mt-1 text-sm text-gray-500">
+          📍 Sukabumi, Jawa Barat, Indonesia
+        </p>
+        <div class="flex gap-3 mt-4">
+          <a
+            href="https://www.linkedin.com/in/firman-abdul-hakim-2a818b92"
+            target="_blank"
+            class="text-gray-500 hover:text-gray-900 transition-colors"
+            aria-label="LinkedIn"
+          >
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"
+              ><path
+                d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
+              ></path></svg
+            >
+          </a>
+          <a
+            href="https://medium.com/@firmanabdulhakim"
+            target="_blank"
+            class="text-gray-500 hover:text-gray-900 transition-colors"
+            aria-label="Medium"
+          >
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"
+              ><path
+                d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"
+              ></path></svg
+            >
+          </a>
+          <a
+            href="https://github.com/firmanJS"
+            target="_blank"
+            class="text-gray-500 hover:text-gray-900 transition-colors"
+            aria-label="GitHub"
+          >
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"
+              ><path
+                d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+              ></path></svg
+            >
+          </a>
+          <a
+            href="https://gitlab.com/firmanJS"
+            target="_blank"
+            class="text-gray-500 hover:text-gray-900 transition-colors"
+            aria-label="GitLab"
+          >
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"
+              ><path
+                d="M22.65 14.39L12 22.13 1.35 14.39a.84.84 0 0 1-.3-.94l1.22-3.78 2.44-7.51A.42.42 0 0 1 4.82 2a.43.43 0 0 1 .58 0 .42.42 0 0 1 .11.18l2.44 7.49h8.1l2.44-7.51A.42.42 0 0 1 18.6 2a.43.43 0 0 1 .58 0 .42.42 0 0 1 .11.18l2.44 7.51L23 13.45a.84.84 0 0 1-.35.94z"
+              ></path></svg
+            >
+          </a>
+          <a
+            href="https://www.youtube.com/channel/UCZJtIl8S_oE1W1JW0tnaiwQ"
+            target="_blank"
+            class="text-gray-500 hover:text-gray-900 transition-colors"
+            aria-label="YouTube"
+          >
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"
+              ><path
+                d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
+              ></path></svg
+            >
+          </a>
+          <a
+            href="https://www.instagram.com/fimzhakim06"
+            target="_blank"
+            class="text-gray-500 hover:text-gray-900 transition-colors"
+            aria-label="Instagram"
+          >
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"
+              ><path
+                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+              ></path></svg
+            >
+          </a>
+          <a
+            href="https://www.facebook.com/fimzjs"
+            target="_blank"
+            class="text-gray-500 hover:text-gray-900 transition-colors"
+            aria-label="Facebook"
+          >
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"
+              ><path
+                d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
+              ></path></svg
+            >
+          </a>
+        </div>
+        <div class="flex flex-wrap gap-3 mt-6">
+          <a
+            href="/jasa/"
+            class="px-5 py-2.5 bg-primary text-white rounded-lg font-medium hover:bg-primary-dark transition-colors shadow-sm"
+            >Lihat Jasa Saya</a
+          >
+          <a
+            href="/tentang/"
+            class="px-5 py-2.5 border border-gray-300 rounded-lg font-medium hover:bg-gray-50 transition-colors"
+            >Tentang Saya</a
+          >
+        </div>
+      </div>
+      <div class="flex justify-center shrink-0">
+        <img
+          src="/assets/img/profile.jpg"
+          alt="Firman Abdul Hakim - Senior Software Engineer (Backend)"
+          class="w-28 h-28 sm:w-36 sm:h-36 rounded-xl object-cover shadow-lg"
+        />
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-white border-y border-gray-100">
+    <div class="max-w-6xl mx-auto px-4 py-12">
+      <h2 class="text-2xl font-bold text-gray-900 mb-4">Tentang Saya</h2>
+      <p class="text-gray-600 leading-relaxed" style="text-align: justify;">
+        Senior Software Engineer specializing in Backend Engineering with 9+
+        years of experience designing and delivering scalable, high-performance,
+        and mission-critical systems. Proven expertise in building distributed
+        architectures, microservices ecosystems, and cloud-native applications
+        that serve large-scale business operations with reliability and
+        efficiency. My core strengths include backend architecture design,
+        RESTful API development, system optimization, observability, security,
+        and performance tuning. I have extensive experience working with PHP,
+        Node.js (Express.js, Fastify, NestJS), Python (Flask, FastAPI), and Go,
+        enabling me to choose the right technology for each business challenge.
+        Passionate about engineering excellence, I focus on building
+        maintainable systems, improving developer productivity, and delivering
+        resilient solutions that scale seamlessly under high traffic and
+        demanding workloads.
+      </p>
+    </div>
+  </section>
+
+  <section class="max-w-6xl mx-auto px-4 py-16">
+    <div class="mb-8">
+      <h2 class="text-2xl font-bold text-gray-900">Layanan Jasa Website</h2>
+      <p class="text-gray-600 mt-1">
+        Saya juga menyediakan jasa pembuatan dan pengembangan website
+        profesional. Setiap website dibangun dengan standar kualitas tinggi dan
+        optimasi SEO.
+      </p>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      {services.map((s) => <ServiceCard {...s} />)}
+    </div>
+  </section>
+
+  <section class="bg-gray-50">
+    <div class="max-w-6xl mx-auto px-4 py-16">
+      <h2 class="text-2xl font-bold text-gray-900 mb-8">Pengalaman Kerja</h2>
+      <div class="space-y-8">
+        <div class="bg-white border border-gray-200 rounded-xl p-6">
+          <div
+            class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2 mb-3"
+          >
+            <div>
+              <h3 class="font-semibold text-gray-900">
+                PT. Logika Sarana Teknologi <span
+                  class="text-xs font-medium bg-gray-200 rounded px-2 py-0.5"
+                  >Full Remote</span>
+              </h3>
+              <p class="text-sm text-primary">Principal Engineer (Backend)</p>
+              <p class="text-xs text-gray-500 mt-1">
+                PHP, MySQL, PostgreSQL, Docker, Node.js, Fastify, Express.js,
+                AWS
+              </p>
+            </div>
+            <span class="text-sm text-gray-500 shrink-0"
+              >Jan 2022 – Apr 2026</span
+            >
+          </div>
+          <ul
+            class="list-disc list-outside pl-5 text-sm text-gray-600 space-y-1.5"
+          >
+            <li>
+              Merancang arsitektur sistem, database schema, dan spesifikasi
+              teknis untuk aplikasi yang scalable.
+            </li>
+            <li>
+              Mengembangkan dan memelihara backend services, RESTful APIs, dan
+              microservices.
+            </li>
+            <li>
+              Melakukan code review, enforce coding standards, dan mentoring
+              junior engineers.
+            </li>
+            <li>
+              Implementasi observability (logging, monitoring, tracing,
+              alerting) untuk operational excellence.
+            </li>
+            <li>
+              Berkolaborasi dengan Product Managers, Frontend, QA, DevOps, dan
+              stakeholders.
+            </li>
+          </ul>
+        </div>
+        <div class="bg-white border border-gray-200 rounded-xl p-6">
+          <div
+            class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2 mb-3"
+          >
+            <div>
+              <h3 class="font-semibold text-gray-900">
+                Jabar Digital Service <span
+                  class="text-xs font-medium bg-gray-200 rounded px-2 py-0.5"
+                  >Hybrid</span>
+              </h3>
+              <p class="text-sm text-primary">
+                Senior Software Engineer (Backend)
+              </p>
+              <p class="text-xs text-gray-500 mt-1">
+                PHP, MySQL, PostgreSQL, Docker, Python, Node.js, Express.js,
+                Flask, AWS
+              </p>
+            </div>
+            <span class="text-sm text-gray-500 shrink-0"
+              >Oct 2019 – Dec 2021</span
+            >
+          </div>
+          <ul
+            class="list-disc list-outside pl-5 text-sm text-gray-600 space-y-1.5"
+          >
+            <li>
+              Merancang API contracts dan dokumentasi menggunakan
+              OpenAPI/Swagger standards.
+            </li>
+            <li>
+              Optimasi performa database melalui SQL tuning, indexing, dan
+              PostgreSQL Materialized Views.
+            </li>
+            <li>
+              Implementasi caching dengan Redis untuk mengurangi database load
+              dan meningkatkan response time.
+            </li>
+            <li>
+              Berkolaborasi dengan Product Managers, Business Analysts, QA, dan
+              DevOps teams.
+            </li>
+          </ul>
+        </div>
+        <div class="bg-white border border-gray-200 rounded-xl p-6">
+          <div
+            class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2 mb-3"
+          >
+            <div>
+              <h3 class="font-semibold text-gray-900">PT LAPI Divusi</h3>
+              <p class="text-sm text-primary">Software Engineer</p>
+              <p class="text-xs text-gray-500 mt-1">
+                PHP, Laravel, CodeIgniter, MySQL, Oracle, JavaScript, Bootstrap
+              </p>
+            </div>
+            <span class="text-sm text-gray-500 shrink-0"
+              >Apr 2017 – Sep 2019</span
+            >
+          </div>
+          <ul
+            class="list-disc list-outside pl-5 text-sm text-gray-600 space-y-1.5"
+          >
+            <li>
+              Mengembangkan full-stack web applications menggunakan PHP,
+              Laravel, CodeIgniter, MySQL, dan Oracle.
+            </li>
+            <li>
+              Membangun RESTful APIs dan integrasi dengan sistem pihak ketiga.
+            </li>
+            <li>
+              Merancang database schema, stored procedures, dan optimized SQL
+              queries.
+            </li>
+          </ul>
+        </div>
+        <div class="bg-white border border-gray-200 rounded-xl p-6">
+          <div
+            class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2 mb-3"
+          >
+            <div>
+              <h3 class="font-semibold text-gray-900">
+                PT Munjalindra Karya Indonesia
+              </h3>
+              <p class="text-sm text-primary">Fullstack Web Developer</p>
+              <p class="text-xs text-gray-500 mt-1">
+                PHP, CodeIgniter, MySQL, JavaScript, Bootstrap, Git
+              </p>
+            </div>
+            <span class="text-sm text-gray-500 shrink-0"
+              >Nov 2016 – Mar 2017</span
+            >
+          </div>
+          <ul
+            class="list-disc list-outside pl-5 text-sm text-gray-600 space-y-1.5"
+          >
+            <li>
+              Mengembangkan internal dan client-facing web applications
+              menggunakan PHP dan CodeIgniter.
+            </li>
+            <li>
+              Membangun responsive UI menggunakan HTML, CSS, JavaScript, jQuery,
+              dan Bootstrap.
+            </li>
+            <li>
+              Memperbaiki bugs, meningkatkan performa aplikasi, dan implementasi
+              fitur baru.
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="text-center mt-8">
+        <a
+          href="/page-experience/"
+          class="text-primary text-sm font-medium hover:underline"
+          >Lihat pengalaman lengkap →</a
+        >
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-6xl mx-auto px-4 py-12">
+    <h2 class="text-2xl font-bold text-gray-900 mb-2">Pendidikan</h2>
+    <p class="text-gray-700">University of Muhammadiyah Sukabumi</p>
+    <p class="text-sm text-gray-500">
+      Bachelor's Degree in Computer Engineering, 2012 – 2016
+    </p>
+  </section>
+
+  <section class="bg-gray-50">
+    <div class="max-w-6xl mx-auto px-4 py-16">
+      <h2 class="text-2xl font-bold text-gray-900 mb-8">
+        Keahlian & Teknologi
+      </h2>
+      <div class="space-y-6">
+        <div>
+          <h3 class="font-semibold text-sm text-gray-700 mb-3">
+            Programming Languages
+          </h3>
+          <div class="flex flex-wrap gap-2">
+            <span
+              class="px-3 py-1.5 text-xs font-medium bg-blue-100 text-blue-700 rounded-full"
+              >PHP (Laravel, CodeIgniter)</span
+            >
+            <span
+              class="px-3 py-1.5 text-xs font-medium bg-yellow-100 text-yellow-700 rounded-full"
+              >Node.js (Express, Fastify, NestJS)</span
+            >
+            <span
+              class="px-3 py-1.5 text-xs font-medium bg-blue-100 text-blue-700 rounded-full"
+              >Python (Flask, FastAPI)</span
+            >
+            <span
+              class="px-3 py-1.5 text-xs font-medium bg-cyan-100 text-cyan-700 rounded-full"
+              >Go (Echo, Fiber)</span
+            >
+          </div>
+        </div>
+        <div>
+          <h3 class="font-semibold text-sm text-gray-700 mb-3">Database</h3>
+          <div class="flex flex-wrap gap-2">
+            <span
+              class="px-3 py-1.5 text-xs font-medium bg-orange-100 text-orange-700 rounded-full"
+              >MySQL</span
+            >
+            <span
+              class="px-3 py-1.5 text-xs font-medium bg-blue-100 text-blue-700 rounded-full"
+              >PostgreSQL</span
+            >
+            <span
+              class="px-3 py-1.5 text-xs font-medium bg-green-100 text-green-700 rounded-full"
+              >MongoDB</span
+            >
+            <span
+              class="px-3 py-1.5 text-xs font-medium bg-purple-100 text-purple-700 rounded-full"
+              >Oracle</span
+            >
+            <span
+              class="px-3 py-1.5 text-xs font-medium bg-indigo-100 text-indigo-700 rounded-full"
+              >SQL Server</span
+            >
+          </div>
+        </div>
+        <div>
+          <h3 class="font-semibold text-sm text-gray-700 mb-3">
+            DevOps & Infrastructure
+          </h3>
+          <div class="flex flex-wrap gap-2">
+            <span
+              class="px-3 py-1.5 text-xs font-medium bg-purple-100 text-purple-700 rounded-full"
+              >Docker</span
+            >
+            <span
+              class="px-3 py-1.5 text-xs font-medium bg-indigo-100 text-indigo-700 rounded-full"
+              >AWS</span
+            >
+            <span
+              class="px-3 py-1.5 text-xs font-medium bg-red-100 text-red-700 rounded-full"
+              >GCP</span
+            >
+            <span
+              class="px-3 py-1.5 text-xs font-medium bg-gray-100 text-gray-700 rounded-full"
+              >Git</span
+            >
+            <span
+              class="px-3 py-1.5 text-xs font-medium bg-gray-100 text-gray-700 rounded-full"
+              >CI/CD (Jenkins, GitHub Actions)</span
+            >
+          </div>
+        </div>
+        <div>
+          <h3 class="font-semibold text-sm text-gray-700 mb-3">
+            Tools & Practices
+          </h3>
+          <div class="flex flex-wrap gap-2">
+            <span
+              class="px-3 py-1.5 text-xs font-medium bg-red-100 text-red-700 rounded-full"
+              >Redis</span
+            >
+
+            <span
+              class="px-3 py-1.5 text-xs font-medium bg-blue-100 text-blue-700 rounded-full"
+              >Microservices</span
+            >
+            <span
+              class="px-3 py-1.5 text-xs font-medium bg-green-100 text-green-700 rounded-full"
+              >REST API / GraphQL</span
+            >
+            <span
+              class="px-3 py-1.5 text-xs font-medium bg-purple-100 text-purple-700 rounded-full"
+              >API Gateway (Krakend)</span
+            >
+            <span
+              class="px-3 py-1.5 text-xs font-medium bg-orange-100 text-orange-700 rounded-full"
+              >RabbitMQ</span
+            >
+            <span
+              class="px-3 py-1.5 text-xs font-medium bg-cyan-100 text-cyan-700 rounded-full"
+              >Minio / S3</span
+            >
+            <span
+              class="px-3 py-1.5 text-xs font-medium bg-yellow-100 text-yellow-700 rounded-full"
+              >APM Elasticsearch</span
+            >
+            <span
+              class="px-3 py-1.5 text-xs font-medium bg-indigo-100 text-indigo-700 rounded-full"
+              >Grafana</span
+            >
+            <span
+              class="px-3 py-1.5 text-xs font-medium bg-pink-100 text-pink-700 rounded-full"
+              >Sentry</span
+            >
+            <span
+              class="px-3 py-1.5 text-xs font-medium bg-emerald-100 text-emerald-700 rounded-full"
+              >Playwright</span
+            >
+            <span
+              class="px-3 py-1.5 text-xs font-medium bg-violet-100 text-violet-700 rounded-full"
+              >K6</span
+            >
+            <span
+              class="px-3 py-1.5 text-xs font-medium bg-teal-100 text-teal-700 rounded-full"
+              >SEO Optimization</span
+            >
+            <span
+              class="px-3 py-1.5 text-xs font-medium bg-rose-100 text-rose-700 rounded-full"
+              >Core Web Vitals</span
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Portfolio />
+
+  <section class="max-w-6xl mx-auto px-4 py-16 text-center">
+    <h2 class="text-2xl font-bold text-gray-900">
+      Siap Mulai Proyek Website Anda?
+    </h2>
+    <p class="text-gray-600 mt-2">
+      Hubungi saya sekarang untuk konsultasi gratis tentang kebutuhan website
+      bisnis Anda.
+    </p>
+    <div class="flex flex-wrap justify-center gap-3 mt-6">
+      <a
+        href="/kontak/"
+        class="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white rounded-lg font-medium hover:bg-primary-dark transition-colors shadow-md"
+      >
+        Konsultasi Gratis
+      </a>
+      <a
+        href="/jasa/"
+        class="inline-flex items-center gap-2 px-6 py-3 border border-gray-300 rounded-lg font-medium hover:bg-gray-50 transition-colors"
+      >
+        Lihat Paket Layanan
+      </a>
+    </div>
+  </section>
+
+  <WhatsAppButton />
+</BaseLayout>

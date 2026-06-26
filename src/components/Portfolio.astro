@@ -1,0 +1,44 @@
+---
+interface PortfolioItem {
+  title: string;
+  description: string;
+  image: string;
+  tags: string[];
+  url?: string;
+}
+
+const items: PortfolioItem[] = [
+  { title: "Company Profile", description: "Company profile website with product showcase and contact information.", image: "/assets/img/portfolio/portfolio.png", tags: ["Codeigniter", "PHP", "Angular", "Tailwind CSS", "MySQL"], url: "https://www.apotekalkaromah.id" },
+  { title: "Blog", description: "Personal blog for sharing technical insights and tutorials.", image: "/assets/img/portfolio/portfolio-1.png", tags: ["PHP", "Laravel", "MySQL", "Tailwind CSS"], url: "https://blog.apotekalkaromah.id/" },
+  { title: "Prayer Times Web", description: "Web application for displaying prayer times.", image: "/assets/img/portfolio/portfolio-2.png", tags: ["HTML", "CSS", "JavaScript", "Tailwind CSS"], url: "https://prayer.apotekalkaromah.id/" },
+  { title: "Ekosistem Data Jabar", description: "Website to manage and display ecosystem data in West Java.", image: "/assets/img/portfolio/portfolio-3.png", tags: ["Python", "Flask", "Docker", "Redis", "PostgreSQL"], url: "https://data.jabarprov.go.id/id" },
+  { title: "Satu Data Jabar", description: "Platform for sharing data between Regional Devices.", image: "/assets/img/portfolio/portfolio-4.png", tags: ["Python", "Flask", "Docker", "Redis", "PostgreSQL"], url: "https://satudata.jabarprov.go.id" },
+  { title: "Sapawarga", description: "Integrated digital public service application in West Java.", image: "/assets/img/portfolio/portfolio-5.png", tags: ["PHP", "Yii2", "Docker", "Redis", "MySQL"], url: "https://play.google.com/store/apps/details?id=com.sapawarga.jds&hl=id&pli=1" },
+  { title: "Auction Management System", description: "Auction management system for managing online auctions and bidding.", image: "/assets/img/portfolio/portfolio-confidential.png", tags: ["Node.js", "Express.js", "Fastify", "Docker", "Redis", "PostgreSQL", "MongoDB", "RabbitMQ", "Krakend"] },
+  { title: "E-Commerce Insurance", description: "Platform for managing online insurance policies and claims.", image: "/assets/img/portfolio/portfolio-confidential.png", tags: ["Node.js", "Express.js", "Docker", "Redis", "SQL Server", "RabbitMQ", "Krakend"] },
+];
+---
+
+<section class="max-w-6xl mx-auto px-4 py-16">
+  <div class="text-center mb-10">
+    <h2 class="text-3xl font-bold text-gray-900">Portfolio</h2>
+    <p class="text-gray-600 mt-2">Proyek yang pernah saya kerjakan — berbagai skala dan teknologi</p>
+  </div>
+  <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    {items.map(item => (
+      <div class="bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-lg transition-shadow">
+        <img src={item.image} alt={item.title} class="w-full h-44 object-cover" loading="lazy" />
+        <div class="p-4">
+          <h3 class="font-semibold text-sm">{item.title}</h3>
+          <p class="text-xs text-gray-500 mt-1">{item.description}</p>
+          <div class="flex flex-wrap gap-1 mt-3 text-xs">
+            {item.tags.map(t => <span class="bg-gray-100 px-2 py-0.5 rounded">{t}</span>)}
+          </div>
+          {item.url && (
+            <a href={item.url} target="_blank" class="text-xs text-blue-600 hover:underline mt-3 inline-block" rel="noopener noreferrer">View Project</a>
+          )}
+        </div>
+      </div>
+    ))}
+  </div>
+</section>

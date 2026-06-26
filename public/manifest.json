@@ -1,0 +1,17 @@
+{
+  "short_name": "FirmanJS Web",
+  "name": "Firman Abdul Hakim - Jasa Pembuatan Website Profesional",
+  "description": "Jasa pembuatan website profesional di Sukabumi dan seluruh Indonesia. Website cepat, SEO-friendly, mobile responsive.",
+  "theme_color": "#2563eb",
+  "background_color": "#f8fafc",
+  "display": "standalone",
+  "scope": "/",
+  "start_url": "/",
+  "icons": [
+    { "src": "/assets/img/logo.png", "type": "image/png", "sizes": "48x48" },
+    { "src": "/assets/img/logo.png", "type": "image/png", "sizes": "96x96" },
+    { "src": "/assets/img/logo.png", "type": "image/png", "sizes": "144x144" },
+    { "src": "/assets/img/logo.png", "type": "image/png", "sizes": "192x192" },
+    { "src": "/assets/img/logo.png", "type": "image/png", "sizes": "512x512" }
+  ]
+}

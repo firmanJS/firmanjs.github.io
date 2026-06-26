@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://firmanjs.github.io/sitemap-index.xml

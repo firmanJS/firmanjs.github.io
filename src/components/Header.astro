@@ -1,0 +1,71 @@
+---
+const currentPath = Astro.url.pathname;
+
+const navItems = [
+  { href: "/", label: "Beranda" },
+  { href: "/jasa/", label: "Jasa" },
+  { href: "/blog/", label: "Blog" },
+  { href: "/tentang/", label: "Tentang" },
+];
+
+function isActive(href: string) {
+  if (href === "/") return currentPath === "/";
+  return currentPath.startsWith(href);
+}
+---
+
+<header class="sticky top-0 z-50 bg-white/90 backdrop-blur-sm border-b border-gray-100">
+  <nav class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+    <a href="/" class="flex items-center gap-2 font-bold text-lg text-primary hover:text-primary-dark shrink-0 whitespace-nowrap">
+      <img src="/assets/img/logo.png" alt="Firman Abdul Hakim" class="w-8 h-8" />
+      <span class="hidden sm:inline">Firman Abdul Hakim</span>
+    </a>
+
+    <div class="flex items-center gap-1.5 sm:gap-3">
+      {navItems.map(item => (
+        <a href={item.href} class={`px-3 py-2 rounded-lg text-sm font-medium hidden sm:inline-block transition-colors ${
+          isActive(item.href)
+            ? "text-primary bg-blue-50"
+            : "text-gray-600 hover:text-gray-900 hover:bg-gray-100"
+        }`}>
+          {item.label}
+        </a>
+      ))}
+      <a href="/kontak/" class="px-4 py-2 bg-primary text-white rounded-lg text-sm font-medium hover:bg-primary-dark transition-colors shadow-sm whitespace-nowrap">
+        Kontak
+      </a>
+      <button id="menu-toggle" class="sm:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors" aria-label="Menu">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path id="menu-icon-open" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          <path id="menu-icon-close" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <div id="mobile-menu" class="hidden sm:hidden border-t border-gray-100 bg-white px-4 py-3 space-y-1 text-sm">
+    {navItems.map(item => (
+      <a href={item.href} class={`block px-3 py-2 rounded-lg transition-colors ${
+        isActive(item.href)
+          ? "text-primary bg-blue-50 font-medium"
+          : "text-gray-600 hover:text-gray-900 hover:bg-gray-100"
+      }`}>
+        {item.label}
+      </a>
+    ))}
+    <a href="/page-experience/" class="block px-3 py-2 rounded-lg text-gray-600 hover:text-gray-900 hover:bg-gray-100 transition-colors">Page Experience</a>
+  </div>
+</header>
+
+<script>
+  const toggle = document.getElementById('menu-toggle');
+  const menu = document.getElementById('mobile-menu');
+  const openIcon = document.getElementById('menu-icon-open');
+  const closeIcon = document.getElementById('menu-icon-close');
+
+  toggle?.addEventListener('click', () => {
+    menu?.classList.toggle('hidden');
+    openIcon?.classList.toggle('hidden');
+    closeIcon?.classList.toggle('hidden');
+  });
+</script>
