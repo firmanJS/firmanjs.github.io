@@ -1,0 +1,17 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title = "Halaman Tidak Ditemukan - 404 | Firman Abdul Hakim";
+const description = "Halaman yang Anda cari tidak ditemukan. Kembali ke beranda.";
+---
+
+<BaseLayout title={title} description={description}>
+  <section class="max-w-2xl mx-auto px-4 py-24 text-center">
+    <h1 class="text-6xl md:text-8xl font-bold text-primary/30">404</h1>
+    <h2 class="text-2xl font-bold text-gray-900 mt-4">Halaman Tidak Ditemukan</h2>
+    <p class="text-gray-600 mt-2">Halaman yang Anda cari mungkin telah dipindahkan atau tidak tersedia.</p>
+    <a href="/" class="mt-8 inline-flex items-center gap-2 px-6 py-3 bg-primary text-white rounded-lg font-medium hover:bg-primary-dark transition-colors shadow-md">
+      Kembali ke Beranda
+    </a>
+  </section>
+</BaseLayout>
