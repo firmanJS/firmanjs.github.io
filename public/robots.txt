@@ -14,4 +14,4 @@ Allow: /
 User-agent: CCBot
 Allow: /
 
-Sitemap: https://firmanjs.github.io/sitemap-index.xml
+Sitemap: https://firmanjs.github.io/sitemap.xml

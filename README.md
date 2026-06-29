@@ -26,7 +26,7 @@ src/
 ├── pages/            # Halaman website (setiap .astro/.md = 1 halaman)
 │   ├── index.astro           # Beranda
 │   ├── jasa/                 # Halaman layanan
-│   ├── page-experience/      # Halaman optimasi Page Experience
+│   ├── pengalaman/      # Halaman optimasi Page Experience
 │   ├── blog/                 # Blog listing + postingan
 │   ├── tentang/              # Tentang
 │   └── kontak/               # Kontak
