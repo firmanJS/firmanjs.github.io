@@ -62,7 +62,8 @@ ${urls.map(u => `  <url>
     <changefreq>${u.changefreq}</changefreq>
     <priority>${u.priority.toFixed(1)}</priority>
   </url>`).join('\n')}
-</urlset>`;
+</urlset>
+`;
 
           writeFileSync(new URL('sitemap.xml', dir), xml, 'utf-8');
           console.log(`✓ sitemap.xml generated with ${urls.length} URLs`);
