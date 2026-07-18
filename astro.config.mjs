@@ -7,9 +7,9 @@ const SITE = 'https://firmanjs.github.io';
 const priorityMap = {
   '/': 1.0,
   '/blog/': 0.9,
-  '/jasa/': 0.8,
+  '/jasa/': 0.9,
   '/pengalaman/': 0.8,
-  '/tentang/': 0.7,
+  '/tentang/': 0.8,
   '/kontak/': 0.7,
 };
 
@@ -31,7 +31,9 @@ export default defineConfig({
       name: 'custom-sitemap',
       hooks: {
         'astro:build:done': ({ dir, pages }) => {
-          const today = new Date().toISOString().split('T')[0];
+          const now = new Date();
+          const wib = new Date(now.getTime() + 7 * 60 * 60 * 1000);
+          const lastmod = wib.toISOString().replace(/\.\d{3}Z/, '+07:00');
 
           const siteUrl = (pathname) => {
             const p = pathname.replace(/^\//, '');
@@ -48,14 +50,14 @@ export default defineConfig({
 
               return {
                 loc: siteUrl(pathname),
-                lastmod: today,
+                lastmod,
                 changefreq: changefreqMap[key] || 'monthly',
                 priority: isBlogPost ? 0.6 : (priorityMap[norm] ?? 0.5),
               };
             });
 
           const xml = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" >
 ${urls.map(u => `  <url>
     <loc>${u.loc}</loc>
     <lastmod>${u.lastmod}</lastmod>
@@ -66,7 +68,7 @@ ${urls.map(u => `  <url>
 `;
 
           writeFileSync(new URL('sitemap.xml', dir), xml, 'utf-8');
-          console.log(`✓ sitemap.xml generated with ${urls.length} URLs`);
+          console.log(`\u2713 sitemap.xml generated with ${urls.length} URLs`);
         },
       },
     },
