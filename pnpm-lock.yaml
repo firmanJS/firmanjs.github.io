@@ -9,13 +9,13 @@ importers:
   .:
     dependencies:
       '@tailwindcss/vite':
-        specifier: ^4.3.1
+        specifier: ^4.3.3
         version: 4.3.3(vite@8.3.1(esbuild@0.28.2)(jiti@2.7.0))
       astro:
-        specifier: ^7.0.0
+        specifier: ^7.3.5
         version: 7.3.5(jiti@2.7.0)
       tailwindcss:
-        specifier: ^4.0.0
+        specifier: ^4.3.3
         version: 4.3.3
 
 packages:
