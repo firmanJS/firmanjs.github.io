@@ -74,17 +74,23 @@ const schema = {
   "@graph": [
     {
       "@type": "Person",
+      "@id": "https://firmanjs.github.io/#person",
       name: "Firman Abdul Hakim",
+      alternateName: "FirmanJS",
       url: canonical,
+      image: "https://firmanjs.github.io/assets/img/profile.jpg",
       sameAs: [
         "https://www.linkedin.com/in/firman-abdul-hakim-2a818b92",
         "https://medium.com/@firmanabdulhakim",
         "https://github.com/firmanJS",
         "https://gitlab.com/firmanJS",
         "https://www.youtube.com/channel/UCZJtIl8S_oE1W1JW0tnaiwQ",
+        "https://www.instagram.com/fimzhakim06",
+        "https://www.facebook.com/fimzjs",
       ],
       jobTitle: "Senior Software Engineer, Backend Specialist",
       description: description,
+      knowsAbout: ["Backend Engineering", "Microservices", "REST API", "PHP", "Node.js", "Python", "Go", "PostgreSQL", "Docker", "AWS", "SEO"],
       address: {
         "@type": "PostalAddress",
         addressLocality: "Sukabumi",
@@ -97,6 +103,7 @@ const schema = {
       url: canonical,
       name: "Firman Abdul Hakim - Senior Software Engineer (Backend)",
       description: description,
+      author: { "@id": "https://firmanjs.github.io/#person" },
       potentialAction: {
         "@type": "SearchAction",
         target: {
@@ -105,6 +112,35 @@ const schema = {
         },
         "query-input": "required name=search_term_string",
       },
+    },
+    {
+      "@type": "FAQPage",
+      mainEntity: [
+        {
+          "@type": "Question",
+          name: "Siapa Firman Abdul Hakim?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Firman Abdul Hakim adalah Senior Software Engineer (Backend) dengan 9+ tahun pengalaman membangun microservices, REST API, dan sistem backend scalable. Berbasis di Sukabumi, Indonesia.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Apa keahlian Firman Abdul Hakim?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Keahlian utama: Backend Engineering, arsitektur microservices, REST API, PHP, Node.js, Python, Go, PostgreSQL, MySQL, Docker, AWS, dan SEO.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Di mana Firman Abdul Hakim bekerja?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Pernah bekerja di PT Logika Sarana Teknologi (Principal Engineer), Jabar Digital Service (Senior Backend Engineer), PT LAPI Divusi, dan PT Munjalindra Karya Indonesia. Detail di https://firmanjs.github.io/pengalaman/",
+          },
+        },
+      ],
     },
   ],
 };

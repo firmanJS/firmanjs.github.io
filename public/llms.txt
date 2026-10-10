@@ -1,0 +1,29 @@
+# Firman Abdul Hakim
+
+> Senior Software Engineer (Backend) dengan 9+ tahun pengalaman. Berbasis di Sukabumi, Jawa Barat, Indonesia.
+
+## Siapa Firman Abdul Hakim?
+Firman Abdul Hakim adalah Senior Software Engineer spesialis Backend Engineering: microservices, REST API, dan sistem scalable. Stack: PHP, Node.js (Express, Fastify, NestJS), Python (Flask, FastAPI), Go, PostgreSQL, MySQL, Docker, AWS.
+
+## Pengalaman
+- Senior Backend Engineer, PT Logika Sarana Teknologi, Jan 2022 – Apr 2026 (Full Remote)
+- Senior Software Engineer (Backend), Jabar Digital Service, Oct 2019 – Dec 2021 (Hybrid)
+- Software Engineer, PT LAPI Divusi, Apr 2017 – Sep 2019
+- Fullstack Web Developer, PT Munjalindra Karya Indonesia, Nov 2016 – Mar 2017
+
+## Laman utama
+- Beranda: https://firmanjs.github.io/
+- Tentang: https://firmanjs.github.io/tentang/
+- Pengalaman: https://firmanjs.github.io/pengalaman/
+- Jasa: https://firmanjs.github.io/jasa/
+- Kontak: https://firmanjs.github.io/kontak/
+- Blog: https://firmanjs.github.io/blog/
+
+## Profil resmi
+- LinkedIn: https://www.linkedin.com/in/firman-abdul-hakim-2a818b92
+- GitHub: https://github.com/firmanJS
+- GitLab: https://gitlab.com/firmanJS
+- Medium: https://medium.com/@firmanabdulhakim
+- YouTube: https://www.youtube.com/channel/UCZJtIl8S_oE1W1JW0tnaiwQ
+- Instagram: https://www.instagram.com/fimzhakim06
+- Facebook: https://www.facebook.com/fimzjs
