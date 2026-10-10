@@ -2,16 +2,15 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ContactForm from '../../components/ContactForm.astro';
 
-const title = "Kontak | Konsultasi Jasa Pembuatan Website Gratis";
-const description = "Hubungi Firman Abdul Hakim untuk konsultasi gratis jasa pembuatan website profesional. Tersedia via WhatsApp, email, atau form kontak. Melayani Sukabumi dan seluruh Indonesia.";
+const title = "Kontak Firman Abdul Hakim | Konsultasi Jasa Pembuatan Website Gratis";
+const description = "Hubungi Firman Abdul Hakim untuk konsultasi gratis jasa website profesional via WhatsApp/form. Melayani Sukabumi & Indonesia.";
 const canonical = "https://firmanjs.github.io/kontak/";
 
 const contactSchema = {
   "@context": "https://schema.org",
   "@type": "ContactPoint",
   "name": "Firman Abdul Hakim - Jasa Pembuatan Website",
-  "telephone": "+62-813-1881-6013",
-  "email": "firman@example.com",
+  "telephone": "+62-896-7454-2686",
   "contactType": "customer support",
   "availableLanguage": ["Indonesia", "English"],
   "areaServed": ["ID", "Indonesia"],
@@ -31,6 +30,7 @@ const breadcrumbSchema = {
 <BaseLayout title={title} description={description} canonical={canonical} jsonLd={[contactSchema, breadcrumbSchema]}>
   <section class="bg-gradient-to-br from-blue-50 via-white to-blue-50 py-16">
     <div class="max-w-4xl mx-auto px-4 text-center">
+      <p class="text-primary font-semibold text-xs tracking-widest uppercase mb-2">Kontak</p>
       <h1 class="text-4xl font-bold text-gray-900">Hubungi Saya</h1>
       <p class="text-gray-600 mt-3 max-w-2xl mx-auto">
         Siap memulai proyek website Anda? Isi form di bawah atau hubungi langsung via WhatsApp. 

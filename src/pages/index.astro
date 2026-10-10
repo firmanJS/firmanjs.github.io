@@ -1,13 +1,12 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import ServiceCard from "../components/ServiceCard.astro";
 import Portfolio from "../components/Portfolio.astro";
 import WhatsAppButton from "../components/WhatsAppButton.astro";
 
 const title =
   "Firman Abdul Hakim - Senior Software Engineer (Backend) | Portfolio & Jasa Pembuatan Website";
 const description =
-  "Firman Abdul Hakim — Senior Backend Engineer dengan 9+ tahun pengalaman membangun scalable microservices, API, dan backend systems. Jasa pembuatan website profesional di Sukabumi dan seluruh Indonesia.";
+  "Firman Abdul Hakim — Senior Backend Engineer 9+ tahun, spesialis microservices & API. Jasa website profesional Sukabumi & Indonesia.";
 const canonical = "https://firmanjs.github.io/";
 
 const services = [
@@ -152,11 +151,16 @@ const schema = {
   canonical={canonical}
   jsonLd={schema}
 >
-  <section class="max-w-6xl mx-auto px-4 py-16 md:py-20">
+  <section class="bg-gradient-to-br from-blue-50 via-white to-blue-50 border-b border-gray-100">
+    <div class="max-w-6xl mx-auto px-4 py-16 md:py-20">
     <div
       class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-8"
     >
       <div>
+        <p class="inline-flex items-center gap-1.5 text-xs font-semibold text-primary bg-blue-100/70 border border-blue-200/60 rounded-full px-3 py-1 mb-4">
+          <span class="w-1.5 h-1.5 rounded-full bg-green-500"></span>
+          Tersedia untuk proyek baru
+        </p>
         <h1 class="text-3xl md:text-4xl font-bold text-gray-900">
           Firman Abdul Hakim
         </h1>
@@ -275,14 +279,20 @@ const schema = {
         <img
           src="/assets/img/profile.jpg"
           alt="Firman Abdul Hakim - Senior Software Engineer (Backend)"
-          class="w-28 h-28 sm:w-36 sm:h-36 rounded-xl object-cover shadow-lg"
+          width="176"
+          height="176"
+          fetchpriority="high"
+          decoding="async"
+          class="w-36 h-36 sm:w-44 sm:h-44 rounded-2xl object-cover shadow-xl ring-4 ring-white"
         />
       </div>
+    </div>
     </div>
   </section>
 
   <section class="bg-white border-y border-gray-100">
     <div class="max-w-6xl mx-auto px-4 py-12">
+      <p class="text-primary font-semibold text-xs tracking-widest uppercase mb-2">Profil Singkat</p>
       <h2 class="text-2xl font-bold text-gray-900 mb-4">Tentang Saya</h2>
       <p class="text-gray-600 leading-relaxed" style="text-align: justify;">
         Senior Software Engineer dengan spesialisasi di bidang Backend Engineering dan pengalaman lebih dari 9 tahun dalam merancang serta menghadirkan sistem yang skalabel, berkinerja tinggi, dan krusial bagi operasional (mission-critical). 
@@ -296,9 +306,10 @@ const schema = {
 
   <section class="bg-gray-50">
     <div class="max-w-6xl mx-auto px-4 py-16">
+      <p class="text-primary font-semibold text-xs tracking-widest uppercase mb-2">Karier</p>
       <h2 class="text-2xl font-bold text-gray-900 mb-8">Pengalaman Kerja</h2>
       <div class="space-y-8">
-        <div class="bg-white border border-gray-200 rounded-xl p-6">
+        <div class="bg-white border border-gray-200 border-l-4 border-l-primary rounded-xl p-6 hover:shadow-md transition-shadow">
           <div
             class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2 mb-3"
           >
@@ -343,7 +354,7 @@ const schema = {
             </li>
           </ul>
         </div>
-        <div class="bg-white border border-gray-200 rounded-xl p-6">
+        <div class="bg-white border border-gray-200 border-l-4 border-l-primary rounded-xl p-6 hover:shadow-md transition-shadow">
           <div
             class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2 mb-3"
           >
@@ -386,7 +397,7 @@ const schema = {
             </li>
           </ul>
         </div>
-        <div class="bg-white border border-gray-200 rounded-xl p-6">
+        <div class="bg-white border border-gray-200 border-l-4 border-l-primary rounded-xl p-6 hover:shadow-md transition-shadow">
           <div
             class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2 mb-3"
           >
@@ -417,7 +428,7 @@ const schema = {
             </li>
           </ul>
         </div>
-        <div class="bg-white border border-gray-200 rounded-xl p-6">
+        <div class="bg-white border border-gray-200 border-l-4 border-l-primary rounded-xl p-6 hover:shadow-md transition-shadow">
           <div
             class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2 mb-3"
           >
@@ -463,20 +474,30 @@ const schema = {
   </section>
 
   <section class="max-w-6xl mx-auto px-4 py-12">
-    <h2 class="text-2xl font-bold text-gray-900 mb-2">Pendidikan</h2>
-    <p class="text-gray-700">University of Muhammadiyah Sukabumi</p>
-    <p class="text-sm text-gray-500">
-      Bachelor's Degree in Computer Engineering, 2012 – 2016
-    </p>
+    <div class="bg-white border border-gray-200 border-l-4 border-l-primary rounded-2xl p-6 md:p-8 shadow-sm flex items-start gap-4">
+      <div class="w-12 h-12 shrink-0 bg-blue-50 rounded-xl flex items-center justify-center">
+        <svg class="w-6 h-6 text-primary" fill="currentColor" viewBox="0 0 24 24"><path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z"/></svg>
+      </div>
+      <div>
+        <h2 class="text-2xl font-bold text-gray-900">Pendidikan</h2>
+        <p class="text-gray-700 font-medium mt-1">University of Muhammadiyah Sukabumi</p>
+        <p class="text-sm text-gray-500">
+          Bachelor's Degree in Computer Engineering, 2012 – 2016
+        </p>
+      </div>
+    </div>
   </section>
 
-  <section class="bg-gray-50">
+  <section class="bg-gray-900">
     <div class="max-w-6xl mx-auto px-4 py-16">
-      <h2 class="text-2xl font-bold text-gray-900 mb-8">
+      <h2 class="text-2xl font-bold text-white">
         Keahlian & Teknologi
       </h2>
-      <div class="space-y-6">
-        <div>
+      <p class="text-gray-400 mt-2 mb-8">
+        Teknologi yang saya pakai untuk membangun sistem backend yang scalable dan andal.
+      </p>
+      <div class="grid sm:grid-cols-2 gap-4 md:gap-6">
+        <div class="bg-white rounded-2xl p-6 shadow-sm">
           <h3 class="font-semibold text-sm text-gray-700 mb-3">
             Programming Languages
           </h3>
@@ -499,7 +520,7 @@ const schema = {
             >
           </div>
         </div>
-        <div>
+        <div class="bg-white rounded-2xl p-6 shadow-sm">
           <h3 class="font-semibold text-sm text-gray-700 mb-3">Database</h3>
           <div class="flex flex-wrap gap-2">
             <span
@@ -524,7 +545,7 @@ const schema = {
             >
           </div>
         </div>
-        <div>
+        <div class="bg-white rounded-2xl p-6 shadow-sm">
           <h3 class="font-semibold text-sm text-gray-700 mb-3">
             DevOps & Infrastructure
           </h3>
@@ -551,7 +572,7 @@ const schema = {
             >
           </div>
         </div>
-        <div>
+        <div class="bg-white rounded-2xl p-6 shadow-sm">
           <h3 class="font-semibold text-sm text-gray-700 mb-3">
             Tools & Practices
           </h3>
@@ -617,30 +638,73 @@ const schema = {
 
   <Portfolio />
 
-  <section class="max-w-6xl mx-auto px-4 py-16 text-center">
-    <h2 class="text-2xl font-bold text-gray-900">
+  <section class="bg-gray-50 border-y border-gray-100">
+    <div class="max-w-4xl mx-auto px-4 py-16">
+    <h2 class="text-2xl font-bold text-gray-900 mb-8">
+      Pertanyaan Umum tentang Firman Abdul Hakim
+    </h2>
+    <div class="space-y-4">
+      <div class="bg-white border border-gray-200 rounded-xl p-5 md:p-6 shadow-sm">
+        <h3 class="font-semibold text-gray-900">Siapa Firman Abdul Hakim?</h3>
+        <p class="text-gray-600 mt-1">
+          Firman Abdul Hakim adalah Senior Software Engineer (Backend) dengan
+          9+ tahun pengalaman membangun microservices, REST API, dan sistem
+          backend scalable. Berbasis di Sukabumi, Indonesia.
+        </p>
+      </div>
+      <div class="bg-white border border-gray-200 rounded-xl p-5 md:p-6 shadow-sm">
+        <h3 class="font-semibold text-gray-900">
+          Apa keahlian Firman Abdul Hakim?
+        </h3>
+        <p class="text-gray-600 mt-1">
+          Keahlian utama: Backend Engineering, arsitektur microservices, REST
+          API, PHP, Node.js, Python, Go, PostgreSQL, MySQL, Docker, AWS, dan
+          SEO.
+        </p>
+      </div>
+      <div class="bg-white border border-gray-200 rounded-xl p-5 md:p-6 shadow-sm">
+        <h3 class="font-semibold text-gray-900">
+          Di mana Firman Abdul Hakim bekerja?
+        </h3>
+        <p class="text-gray-600 mt-1">
+          Pernah bekerja di PT Logika Sarana Teknologi (Principal Engineer),
+          Jabar Digital Service (Senior Backend Engineer), PT LAPI Divusi, dan
+          PT Munjalindra Karya Indonesia. Detail di
+          <a href="/pengalaman/" class="text-primary hover:underline"
+            >halaman Pengalaman</a
+          >.
+        </p>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <section class="bg-gradient-to-br from-primary to-primary-dark">
+    <div class="max-w-6xl mx-auto px-4 py-16 md:py-20 text-center">
+    <h2 class="text-2xl md:text-3xl font-bold text-white">
       Siap Mulai Proyek Website Anda?
     </h2>
-    <p class="text-gray-600 mt-2">
+    <p class="text-blue-100 mt-3 max-w-2xl mx-auto">
        Saya juga menyediakan jasa pembuatan dan pengembangan website
         profesional. <br>Setiap website dibangun dengan standar kualitas tinggi dan
         optimasi SEO.
         <br>Hubungi saya sekarang untuk konsultasi gratis tentang kebutuhan website
       bisnis Anda.
     </p>
-    <div class="flex flex-wrap justify-center gap-3 mt-6">
+    <div class="flex flex-wrap justify-center gap-3 mt-8">
       <a
         href="/kontak/"
-        class="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white rounded-lg font-medium hover:bg-primary-dark transition-colors shadow-md"
+        class="inline-flex items-center gap-2 px-6 py-3 bg-white text-primary rounded-lg font-semibold hover:bg-blue-50 transition-colors shadow-md"
       >
         Konsultasi Gratis
       </a>
       <a
         href="/jasa/"
-        class="inline-flex items-center gap-2 px-6 py-3 border border-gray-300 rounded-lg font-medium hover:bg-gray-50 transition-colors"
+        class="inline-flex items-center gap-2 px-6 py-3 border border-white/40 text-white rounded-lg font-medium hover:bg-white/10 transition-colors"
       >
         Lihat Paket Layanan
       </a>
+    </div>
     </div>
   </section>
 

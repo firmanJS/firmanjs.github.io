@@ -3,7 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import WhatsAppButton from '../../components/WhatsAppButton.astro';
 import { fetchMediumPosts } from '../../lib/medium';
 
-const title = "Blog Jasa Pembuatan Website & SEO | Tips Website Bisnis";
+const title = "Blog Firman Abdul Hakim | Jasa Website, SEO & Tips Bisnis";
 const description = "Baca artikel terbaru tentang tips pembuatan website, optimasi SEO, digital marketing, dan teknologi web untuk bisnis Anda.";
 const canonical = "https://firmanjs.github.io/blog/";
 
@@ -15,21 +15,21 @@ const localPosts = [
     description: "Strategi SEO terbaru untuk meningkatkan peringkat website bisnis Anda di halaman pertama Google. Panduan lengkap dari technical SEO hingga content marketing.",
     pubDate: "1 Juni 2026",
     tags: ["SEO", "Google"],
-    link: "/blog/cara-meningkatkan-peringkat-website-di-google/"
+    link: "/blog/posts/cara-meningkatkan-peringkat-website-di-google/"
   },
   {
     title: "Panduan Lengkap Memilih Jasa Pembuatan Website untuk Bisnis Anda",
     description: "Tips memilih jasa pembuatan website yang tepat. Pelajari faktor penting seperti portofolio, teknologi, SEO, dan biaya.",
     pubDate: "15 Juni 2026",
     tags: ["Tips", "Website"],
-    link: "/blog/panduan-memilih-jasa-pembuatan-website/"
+    link: "/blog/posts/panduan-memilih-jasa-pembuatan-website/"
   },
   {
     title: "Pentingnya Page Experience untuk Bisnis Online",
     description: "Pelajari mengapa Page Experience dan Core Web Vitals penting untuk kesuksesan website bisnis Anda dan bagaimana cara mengoptimalkannya.",
     pubDate: "20 Mei 2026",
     tags: ["Page Experience", "SEO"],
-    link: "/blog/pentingnya-pengalaman-untuk-bisnis-online/"
+    link: "/blog/posts/pentingnya-page-experience-untuk-bisnis-online/"
   }
 ];
 
@@ -70,7 +70,7 @@ const itemListSchema = {
             <h2 class="text-2xl font-bold text-gray-900 mb-6">Artikel Terbaru</h2>
             <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
               {localPosts.map(post => (
-                <article class="bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-lg transition-shadow">
+                <article class="group bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-lg transition-shadow">
                   <a href={post.link}>
                     <div class="w-full h-44 bg-gradient-to-br from-blue-100 via-blue-50 to-purple-100 flex items-center justify-center">
                       <svg class="w-12 h-12 text-blue-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -95,10 +95,10 @@ const itemListSchema = {
             <h2 class="text-xl font-bold text-gray-900 mb-6">Dari Medium</h2>
             <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {mediumPosts.map(post => (
-                <article class="bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-lg transition-shadow">
+                <article class="group bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-lg transition-shadow">
                   <a href={post.link} target="_blank" rel="noopener noreferrer">
                     {post.thumbnail ? (
-                      <img src={post.thumbnail} alt={post.title} class="w-full h-44 object-cover" loading="lazy" />
+                      <img src={post.thumbnail} alt={post.title} class="w-full h-44 object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" decoding="async" />
                     ) : (
                       <div class="w-full h-44 bg-gradient-to-br from-blue-100 via-blue-50 to-purple-100 flex items-center justify-center">
                         <svg class="w-12 h-12 text-blue-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
