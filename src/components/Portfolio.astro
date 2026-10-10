@@ -23,13 +23,14 @@ const items: PortfolioItem[] = [
 
 <section class="max-w-6xl mx-auto px-4 py-16">
   <div class="text-center mb-10">
+    <p class="text-primary font-semibold text-xs tracking-widest uppercase mb-2">Karya Terpilih</p>
     <h2 class="text-3xl font-bold text-gray-900">Portfolio</h2>
     <p class="text-gray-600 mt-2">Proyek yang pernah saya kerjakan — berbagai skala dan teknologi</p>
   </div>
   <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
     {items.map(item => (
-      <div class="bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-lg transition-shadow">
-        <img src={item.image} alt={item.title} class="w-full h-44 object-cover" loading="lazy" />
+      <div class="group bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-lg transition-shadow">
+        <img src={item.image} alt={item.title} class="w-full h-44 object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" decoding="async" />
         <div class="p-4">
           <h3 class="font-semibold text-sm">{item.title}</h3>
           <p class="text-xs text-gray-500 mt-1">{item.description}</p>

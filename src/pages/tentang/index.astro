@@ -3,7 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import WhatsAppButton from '../../components/WhatsAppButton.astro';
 
 const title = "Tentang Firman Abdul Hakim | Jasa Pembuatan Website Profesional";
-const description = "Kenali Firman Abdul Hakim — Senior Software Engineer dengan 9+ tahun pengalaman di web development, microservices, dan optimasi SEO. Siap membantu bisnis Anda go digital.";
+const description = "Kenali Firman Abdul Hakim — Senior Software Engineer 9+ tahun: web development, microservices, SEO. Siap membantu bisnis Anda go digital.";
 const canonical = "https://firmanjs.github.io/tentang/";
 
 const personSchema = {
@@ -64,10 +64,11 @@ const breadcrumbSchema = {
 ---
 
 <BaseLayout title={title} description={description} canonical={canonical} jsonLd={[personSchema, breadcrumbSchema]}>
-  <section class="max-w-4xl mx-auto px-4 py-16">
+  <section class="bg-gradient-to-br from-blue-50 via-white to-blue-50 border-b border-gray-100">
+    <div class="max-w-4xl mx-auto px-4 py-16">
     <div class="grid md:grid-cols-3 gap-10">
       <div class="md:col-span-1">
-        <img src="/assets/img/profile.jpg" alt="Firman Abdul Hakim - Senior Software Engineer (Backend)" class="w-full rounded-xl shadow-md" />
+        <img src="/assets/img/profile.jpg" alt="Firman Abdul Hakim - Senior Software Engineer (Backend)" class="w-full rounded-xl shadow-md" loading="lazy" decoding="async" />
         <div class="mt-4 space-y-2 text-sm text-gray-600">
           <p class="flex items-center gap-2"><svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg> Sukabumi, Jawa Barat</p>
           <p class="flex items-center gap-2"><svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg> 9+ Tahun Pengalaman</p>
@@ -122,23 +123,24 @@ const breadcrumbSchema = {
         </div>
       </div>
     </div>
+    </div>
   </section>
 
   <section class="bg-gray-50 py-12">
     <div class="max-w-4xl mx-auto px-4 text-center">
       <h2 class="text-2xl font-bold text-gray-900">Kenapa Memilih Saya?</h2>
       <div class="grid sm:grid-cols-3 gap-6 mt-8">
-        <div class="bg-white p-6 rounded-xl border border-gray-200">
+        <div class="bg-white p-6 rounded-xl border border-gray-200 hover:shadow-md transition-shadow">
           <p class="text-3xl font-bold text-primary">9+</p>
           <p class="text-sm font-semibold mt-1">Tahun Pengalaman</p>
           <p class="text-xs text-gray-500 mt-1">Bekerja di perusahaan teknologi terkemuka</p>
         </div>
-        <div class="bg-white p-6 rounded-xl border border-gray-200">
+        <div class="bg-white p-6 rounded-xl border border-gray-200 hover:shadow-md transition-shadow">
           <p class="text-3xl font-bold text-primary">15+</p>
           <p class="text-sm font-semibold mt-1">Proyek Selesai</p>
           <p class="text-xs text-gray-500 mt-1">Dari company profile hingga enterprise app</p>
         </div>
-        <div class="bg-white p-6 rounded-xl border border-gray-200">
+        <div class="bg-white p-6 rounded-xl border border-gray-200 hover:shadow-md transition-shadow">
           <p class="text-3xl font-bold text-primary">10+</p>
           <p class="text-sm font-semibold mt-1">Teknologi Dikuasai</p>
           <p class="text-xs text-gray-500 mt-1">PHP, Node.js, Python, Go, dan lainnya</p>
